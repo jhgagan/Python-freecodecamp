@@ -19,9 +19,9 @@ This way Python will decide the appropriate datatype and assign it to the variab
 In the second type we mention the datatype of the variable prior to the name of the variable. In this case it is not mandatory to assign a value to the variable at the time of creating the variable.
 
 ### Syntax:
-int number = 0
-char character
-string words = "Random String"
+    int number = 0
+    char character
+    string words = "Random String"
 
 ## How to define a function in python?
 
@@ -29,9 +29,9 @@ We define the function using the syntax given below,
 
 ### Syntax:
 
-def function_name(argumnets):
-    body_of_the_function
-    return (variable or leave it blank)
+    def function_name(argumnets):
+        body_of_the_function
+        return (variable or leave it blank)
 
 make sure to maintain the indendations carefully, in pythong the start and end of a code block is defined by the indendations. 
 
@@ -39,23 +39,22 @@ make sure to maintain the indendations carefully, in pythong the start and end o
 You can call the function by typing out the name of the function followed by the argumnet list enclosed between the paranthesis. If the function returns a value make sure to assign the function call to a variable.
 
 ### Syntax:
-\# Function without a return value
+    \# Function without a return value
 
-function()
+    function()
 
-\# Function with a return value but without arguments list
-value = function()
+    \# Function with a return value but without arguments list
+    value = function()
 
-\# Funtion with a return value and arguments
-
-value = function(arg1, arg2)
+    \# Funtion with a return value and arguments
+    value = function(arg1, arg2)
 
 ## Datatype - Dictionaries
 Dictionaries is a dataype in python that is used to store data values in a key, value pair format. The example given below will make the declaration and the concept more clearer.
 
 ### Syntax:
 
-dict = {"Name":"Gagan", "Country":"India"}
+    dict = {"Name":"Gagan", "Country":"India"}
 
 Here, the "Name" is set to "Gagan" and "Country" is set to "India". "Name" and "Country" are the keys, and "Gagan" and "India" are the values. Values can also be a variable. 
 
@@ -69,7 +68,7 @@ We can get the user's input using the input() function.
 
 ### Syntax:
 
-player_choice = input("Enter a choice (Rock, Paper, Scissor): ")
+    player_choice = input("Enter a choice (Rock, Paper, Scissor): ")
 
 In the above statement, the String that is provided as the argument to the input function gets printed to prompt the user to provide an input. Then the user's input is assigned to the variable player_choice.
 
