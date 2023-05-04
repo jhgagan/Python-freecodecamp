@@ -5,8 +5,8 @@ In this section we will be learning the basis of the Python language. This inclu
 A list of all the topics and the respective time stamps is provided below, 
 (Note: this content can be found in the Decription of the video)
 
-⌨️ (0:43:52) Setup Python Locally
-⌨️ (0:47:47) Creating New Repl
+⌨️ (0:43:52) Setup Python Locally \n
+⌨️ (0:47:47) Creating New Repl \n
 ⌨️ (0:48:45) Variables
 ⌨️ (0:51:21) Expressions and Statements 
 ⌨️ (0:52:38) Comments
