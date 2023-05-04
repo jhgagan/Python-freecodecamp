@@ -11,14 +11,14 @@ There are two ways to define a variable in python. Let's have a look at the easi
 In this way we just write the name of the variable and then assign a value to it. 
 This way Python will decide the appropriate datatype and assign it to the variable. But, make sure that the names of the variable is not the same as the key words or reserved words.
 
-### Syntax:
+#### Syntax:
     player's choice = "rock"
     number = 1
     character = 'a'
 
 In the second type we mention the datatype of the variable prior to the name of the variable. In this case it is not mandatory to assign a value to the variable at the time of creating the variable.
 
-### Syntax:
+#### Syntax:
     int number = 0
     char character
     string words = "Random String"
@@ -27,7 +27,7 @@ In the second type we mention the datatype of the variable prior to the name of 
 
 We define the function using the syntax given below,
 
-### Syntax:
+#### Syntax:
 
     def function_name(argumnets):
         body_of_the_function
@@ -38,7 +38,7 @@ make sure to maintain the indendations carefully, in pythong the start and end o
 ## How to call a function?
 You can call the function by typing out the name of the function followed by the argumnet list enclosed between the paranthesis. If the function returns a value make sure to assign the function call to a variable.
 
-### Syntax:
+#### Syntax:
     \# Function without a return value
 
     function()
@@ -52,7 +52,7 @@ You can call the function by typing out the name of the function followed by the
 ## Datatype - Dictionaries
 Dictionaries is a dataype in python that is used to store data values in a key, value pair format. The example given below will make the declaration and the concept more clearer.
 
-### Syntax:
+#### Syntax:
 
     dict = {"Name":"Gagan", "Country":"India"}
 
@@ -66,10 +66,46 @@ Setting the values in the code is fine, But to be able to make a program more us
 ### How to get the user input?
 We can get the user's input using the input() function.
 
-### Syntax:
+#### Syntax:
 
     player_choice = input("Enter a choice (Rock, Paper, Scissor): ")
 
 In the above statement, the String that is provided as the argument to the input function gets printed to prompt the user to provide an input. Then the user's input is assigned to the variable player_choice.
 
 ## Importing Libraries, Creating Lists, and Calling Methods
+
+This will be used to make sure that the computer is able to "randomly" (technically it is not really random) select one of the three choices (Rock, Paper, Scissors). We will be trying to do it using the Random library in python. 
+
+To use a library in the program we first need to import it. This is done my using the statement below at the beginning of the program, before the main body of the program.
+
+#### Syntax:
+    import random
+
+### Lists
+
+A list in python is used to store multiple items in a single variable. Each element of the list is separeted by a comma.
+
+#### Syntax:
+    food = ['pizza', 'carrot', 'eggs']
+
+Now, using the random library and passing the list as an argument to the function 'random.choice()' we can get a random element from the list as an output.
+
+#### Syntax:
+    dinner = random.choice(food)
+
+Now, we can use the same to get a random choice from a list of 'rock', 'paper' ,and 'scissor' and assign it to the variable "computer_choice".
+
+### Check_win() function:
+
+Now, we define a "Check_win()" function to check if the computer won or the player won in that particular game. The function will take the player's choice and the computer's choice as its arguments.
+
+## Conditional statements:
+
+### If statement
+
+This is use to do smarter options when you have a condition and the output or the procedure has to change based on the conditon's satifaction or dissatifaction. 
+
+#### Syntax:
+    if (condition):
+        body
+
