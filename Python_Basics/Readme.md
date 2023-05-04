@@ -8,9 +8,9 @@ A list of all the topics and the respective time stamps is provided below,
 ⌨️ (0:43:52) Setup Python Locally\
 ⌨️ (0:47:47) Creating New Repl\
 ⌨️ (0:48:45) Variables  \
-⌨️ (0:51:21) Expressions and Statements  \ 
+⌨️ (0:51:21) Expressions and Statements  \
 ⌨️ (0:52:38) Comments  \
-⌨️ (0:54:23) Data Types \ 
+⌨️ (0:54:23) Data Types  \
 ⌨️ (1:00:16) Operators  \
 ⌨️ (1:00:44) Arithmetic Operators  \
 ⌨️ (1:03:52) Comparison Operators  \
@@ -26,7 +26,7 @@ A list of all the topics and the respective time stamps is provided below,
 ⌨️ (1:26:07) Number Data Types  \
 ⌨️ (1:28:19) Built-in Functions  \
 ⌨️ (1:29:50) Enums  \
-⌨️ (1:32:51) User Input \ 
+⌨️ (1:32:51) User Input  \ 
 ⌨️ (1:34:39) Control Statements  \
 ⌨️ (1:36:48) Lists  \
 ⌨️ (1:46:21) Sorting Lists  \
@@ -54,5 +54,5 @@ A list of all the topics and the respective time stamps is provided below,
 ⌨️ (3:18:26) Installing Packages with pip  \
 ⌨️ (3:21:39) List Compression  \
 ⌨️ (3:23:09) Polymorphism  \
-⌨️ (3:24:23) Operator Overloading  \
+⌨️ (3:24:23) Operator Overloading  
 
