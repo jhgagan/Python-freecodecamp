@@ -50,20 +50,31 @@ You can call the function by typing out the name of the function followed by the
     value = function(arg1, arg2)
 
 ## Datatype - Dictionaries
+
 Dictionaries is a dataype in python that is used to store data values in a key, value pair format. The example given below will make the declaration and the concept more clearer.
 
 #### Syntax:
-
     dict = {"Name":"Gagan", "Country":"India"}
+
+### Accessing the elements of a Dictionary
+To access an element of a dictionary we use the format given below,
+
+#### Syntax:
+    name = dict["Name"]
+    country = dict["Country"]
+
+dict[\"Name\"] statements returns the value of the key "Name" and dict[\"Country\"] statement returns the value of the key "Country"
 
 Here, the "Name" is set to "Gagan" and "Country" is set to "India". "Name" and "Country" are the keys, and "Gagan" and "India" are the values. Values can also be a variable. 
 
 After Leaning about the Dictionaries datatype it makes more sense to create a dictionary of choice with the key as "Player" and "Computer" with their corresponding values.
 
 ## User Input
+
 Setting the values in the code is fine, But to be able to make a program more user friendly it need to be more interactive. To make the program more interactive and more dynamic we can also get the user's input.
 
 ### How to get the user input?
+
 We can get the user's input using the input() function.
 
 #### Syntax:
@@ -106,6 +117,40 @@ Now, we define a "Check_win()" function to check if the computer won or the play
 This is use to do smarter options when you have a condition and the output or the procedure has to change based on the conditon's satifaction or dissatifaction. 
 
 #### Syntax:
-    if (condition):
-        body
+    if (condition 1):
+        body 1
+    elif (condition 2):
+        body 2
+    else:
+        body 3
+
+here the body 1 will execute only if the condition 1 is satisfied. If condition 1 is not satisfied but condition 2 is satisfied then body 2 will be executed. If both condition 1 or condition 2 is not satisfied then the body 3 will be executed.
+
+### Refacotring statements:
+
+Refactoring of the statements is done so that the result of the refactored code is unchanged but improves the readability of the code.
+
+This can be done using the nested if statements
+
+## String concatination:
+
+One can contatinate two string using the '+' operator in python. 
+
+example,
+#### Syntax:
+    print("String 1 "+" String 2")
+
+This is output: String 1 String 2
+
+## f-strings
+
+This will help you make strings with variables and strings 
+
+#### Syntax:
+    age = 25
+    print(f"Jim is {age} years old.")
+
+Output for the above provided code will be:
+Jim is 25 years old.
+
 
