@@ -56,3 +56,108 @@ A list of all the topics and the respective time stamps is provided below,
 ⌨️ (3:23:09) Polymorphism  \
 ⌨️ (3:24:23) Operator Overloading  
 
+## Variables
+
+Variables are used to store values of variety of types in python. The of the variable has to follow the rules given below, 
+
+- It has to start with an alphabet.
+- It cannot have any speacial charaters in it except for numericals and underscore(_)
+- It should not be a reserved word of Python
+
+### Examples
+
+Some examples of valid variable names are given below
+
+#### Syntax:
+    name = "Gagan"
+    country = "Indian"
+    Phone_39 = "320*******"
+    Phone_91 = "886*******"
+
+Some examples of invalid variable names are given below
+
+#### Syntax:
+    name$$ = "Gagan"
+    39_Phone  = "320*******"
+    while = "While is a keyword"
+
+Here, variable name$$ is invalid as it has a special symbol as part of it.
+Variable 39_Phone is invalid as it starts with a number. Variable while is invalid as "while" is a keyword.
+
+## Expression and Statements:
+
+An expression is any code that returns an value.
+
+### Example:
+
+An examples of expressions are given below,
+
+#### Syntax:
+    1+1
+    1*10/5+30
+
+A statement is an operation on a value. The operation can be anything, Like printing the value or contatinating a value etc.
+
+### Example:
+
+An examples of statements are given below,
+
+#### Syntax:
+    name = "Gagan"
+    print(name)
+
+### Note:
+
+You can add a semicolon (;) at the end of the pyhotn statement if you want but it will produce the same results even without it.
+
+## Comments:
+
+Everthing after a '#' is ignore by the compiler. So, comments can be used to write a description of the statement to make the program more readable.
+
+#### Syntax:
+    # This is a comment and this will not be read by the compiler
+    Name = "Gagan:
+
+### Note:
+In python, unlike C++, C, java etc, indendation has meaning and you can indend the statements randomly.
+
+## Datatype:
+
+Python has several built in data types. You can check the datatype of a variable by using the type() function.
+
+Some of the pre built datatypes of python are,
+- complex for complex numbers
+- bool for booleans
+- list for lists
+- tuple for tuples
+- range for ranges
+- dict for dictionaries
+- set for sets
+- int for integers
+- float for floating type values
+
+We can also use isinstance() function to compare the datatype of a variable.
+
+#### Syntax:
+    name = "Gagan"
+    isinstance(name,str)
+
+This statement should return true as the name variable contains a string
+
+### Note:
+Python automatically detects the type of the variable based on the value you assign to the varibale during the first declaration of the variable
+
+But you can also create a variable of a specific type using a class constructor.
+
+#### Syntax:
+    number_float = float(2)
+    number_int = int(2)
+    number_string = str("2")
+
+You can also convert from one data type to another using class constructor. This process is called casting. The conversion might not always work. We need to make sure that the types are atleast similar. 
+
+Like a string can't be converted into a int. But float can be converted into an int(with the loss of decimal places)
+
+#### Syntax:
+    age = int(25.50)
+    print(isinstance(age, int))
