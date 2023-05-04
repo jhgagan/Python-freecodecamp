@@ -26,7 +26,7 @@ A list of all the topics and the respective time stamps is provided below,
 ⌨️ (1:26:07) Number Data Types  \
 ⌨️ (1:28:19) Built-in Functions  \
 ⌨️ (1:29:50) Enums  \
-⌨️ (1:32:51) User Input  \ 
+⌨️ (1:32:51) User Input  \
 ⌨️ (1:34:39) Control Statements  \
 ⌨️ (1:36:48) Lists  \
 ⌨️ (1:46:21) Sorting Lists  \
