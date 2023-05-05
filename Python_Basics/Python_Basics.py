@@ -14,6 +14,11 @@ age = 25
 print(type(name))
 print(type(age))
 
-##checking the type of the variable using the isinstance function
+## checking the type of the variable using the is instance function
 print(isinstance(name, str))
 print(isinstance(age, int))
+
+## Explicit declaration
+number_float = float(2)
+number_int = int(2)
+number_string = str("2")
