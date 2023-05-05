@@ -161,3 +161,112 @@ Like a string can't be converted into a int. But float can be converted into an 
 #### Syntax:
     age = int(25.50)
     print(isinstance(age, int))
+
+## Operators:
+
+We have already seen assignment operators (=). There are many other types of operators like arithmatic operators, bitwise operators etc.
+
+### Arithmatic Operators:
+
+These operators are used to do basic mathematical operations.
+some of them are mentioned below, 
+
+- Addition +
+- Subtraction -
+- Multiplication *
+- Division /
+- Remainder %
+- Exponent **
+- Floor division // 
+- Increment ++
+- decrement --
+
+Some of these operators can also be combined with assignment operator as given below,
+
+#### Syntax:
+    age = 8
+    age += 10
+
+    age -= 10
+
+    age *= 10
+
+    age /=10
+
+### Comparison operators:
+
+These operators are used to compare two quantities
+
+- a == b # equal to
+- a != b # not equal 
+- a > b # Greater than
+- a <= b # Less than or equal to
+
+### Boolean operator
+
+These operators return a '1' or '0' value. That can also be interpreted as the operators that return a 'True' or 'False' value.
+
+These follow the same logic as the logic gates so, you can just refer to the truth table.
+
+- and 
+- or
+- xor
+- not
+
+### Bitwise operator:
+These operators are used to calculate the bitwise calculations on integers. 
+
+- << - Left shift
+- \>\> - Rigth shift
+- & - Binary AND
+- | - Binary OR
+- ~ - Binary NOT
+- ^ Binary XOR 
+
+### Identity operator:
+Identity operator ('is') returns 'True' if both its parameters are the same.
+
+### Membership operator:
+Membership operator ('in') returns 'True' if the first element is part of the second element.
+
+### Ternary operator:
+This helps define a condition in a quick way. The syntax is given below
+
+#### Syntax:
+    # Equivalent if else statement would look like this
+    if age > 18 :
+        return True
+    else:
+        return False
+    
+    # Equivalent Ternary operator 
+    return True if age > 18 else False
+
+## String 
+A String in python is a series of characters enclosed in quotes("", '').
+
+example,
+"String 1", 'String 2'
+
+#### Note: 
+
+A string can be multi line if it is enclosed by 3 quotation marks at the start and end of the string. 
+
+### Built in methods of string:
+
+String has some built in methods to help handle strings in a easier way. Some of the commonly used ones are mentioned below. 
+
+- .upper() - converts the string to lower case
+- .lower() - converts the string to upper case
+- .title() - converts the string to title case
+- .islower() - checks if the string is made of all lower case letters
+- .isalpha() - check if a string contrain only charaters and is not empty
+- .isalnum() - check if a string contrains characters or digits and is not empty
+- .isdecimal() - to check if a string contains digits and is not empty
+- .startsswith() - to check if the string starts with a specific string
+- .endswith() - to check if the string ends with a specific string
+- .replace() - to replace a part of a string
+- .split() - to split a string on a specific character separator
+- .strip() - to trim the whitespace from a string
+- .join() - to append new letters to a string
+- .find() - to find the position of a substring
