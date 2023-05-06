@@ -33,3 +33,44 @@ print(special_string)
 print(name[1])      # get the character at a position from the string using indexing
 print(name[-1])     # negative indexing is going to start from the last character
 print(name[1:2])    # we can get all the characters in a range using the ranging operator ':'
+
+
+# Boolean example
+# Done is a boolean variable with value True
+done = bool(True)
+
+if done :
+    print("yes")
+else:
+    print("No")
+
+# Complex numbers
+
+num = complex(2,3) # 2 + 3j
+# extracting the real and imaginary part of the given complex number
+print (num.real, num.imag)
+
+# Built in functions
+
+# prints the absolute value of the argumnet
+print(abs(-5))
+
+# prints the nearest integer or float based on the precision set
+print(round(5.49))
+# setting the precision to 1
+print(round(5.49,1))
+
+
+from enum import Enum
+
+class State(Enum):
+    INACTIVE = 0
+    ACTIVE = 1
+
+print(f"enum value: {State.ACTIVE.value}")
+print(State['ACTIVE'].value)
+# listing all the values of an enum
+print(f"listing enum values:{list(State)}")
+# counting the number of constants in the enum
+print(len(State)) 
+

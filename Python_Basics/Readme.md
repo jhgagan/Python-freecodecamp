@@ -270,3 +270,70 @@ String has some built in methods to help handle strings in a easier way. Some of
 - .strip() - to trim the whitespace from a string
 - .join() - to append new letters to a string
 - .find() - to find the position of a substring
+
+## Booleans
+
+This is a data type that can only store either 'True' or 'False' as it's value. They can be used with conditional statements or as flags. 
+
+Also, all the numbers except for '0' is considered to be true in python. All strings are true except empty string. All lists, dictionary are True except for if they are empty
+
+### Any method:
+
+This method returns 'True' if any of the values in it's parameters are 'True'. 
+
+### All method:
+
+This method returns 'True' only if all the argumnets passed to it are 'True'.
+
+## Number data types:
+
+We have already discussed about integers and floats.
+
+### Complex:
+
+Complex numbers are an extenstion of a familiar real numbers system. In complex number all the numbers are represented with a real number part and imaginary numbers part. the imaginary part is always suffixed with 'i' or 'j'.
+
+Example of a complex number: 2 + 3j
+
+#### Syntax:
+
+    # declaring a number of a complex type in python 
+    num = complex(2,3) # 2 + 3j
+
+## Built in Functions:
+
+### abs
+
+This method returns the absolute value of the number passed as an argument.
+
+### round
+
+This method will round the argument to the nearest integer value. You can also set the second argument to specify the precision.
+
+you can find more built in functions from the libraries
+
+## Enum
+
+Enumeration are readable names that are bound to a constant value. you can use enums by first importing the enum package
+
+#### Syntax:
+    from enum import Enum
+
+    class State(Enum):
+        INACTIVE = 0
+        ACTIVE = 1
+
+Enums is the only way to create constants in python.
+
+## User Input
+
+To get the input from the user you can use the input() function.
+
+#### Syntax:
+    age = input("What is your age?")
+    print(f"Your age is {age}")
+
+## Control statement:
+
+These help us to write the program to take decisions. Some of the exmaples of control statements are, if...else, switch, ternary operator etc.
+
