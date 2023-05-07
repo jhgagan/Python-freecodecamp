@@ -74,3 +74,86 @@ print(f"listing enum values:{list(State)}")
 # counting the number of constants in the enum
 print(len(State)) 
 
+# List 
+list_var = ["Roger", 1, "Syd", True]
+
+# checking if "Roger" is in the list
+print("Roger" in list_var)
+# reference an element using index numbers
+print(list_var[2])
+
+# updating the item in the list
+list_var[2] = "Gunda"
+# adding new element to the list
+list_var.append("Judah")
+# adding multiple new elements to the list at once
+list_var.extend(["Judah", 5])
+# printing the entire list
+print(list_var)
+# Using the += operator to add elements to the list
+list_var += ["Tommy",7]
+# Printing the list
+print(list_var)
+
+# removing the element from the list using remove
+list_var.remove("Tommy")
+# Print the list
+print(list_var)
+# remove the element of the list using the index
+print(f"Popped element from the list: {list_var.pop()}")
+#print the list
+print(f"list: {list_var}")
+
+# inseting into a list
+list_var.insert(2,"Test")
+# print the list
+print(f"list after inseting \"Test\" to index location 2: {list_var}")
+# inserting multiple elements
+list_var[2:2] = ["Test1","Test2"]
+# Printing the updated  list
+print(f"Updated list :{list_var}")
+
+# Modifying the list to contain only strings
+list_var = ["Zebra", "zebra", "Bob", "bob", "Gagan", "gagan"]
+# printing the unsorted string
+print(f"Unsorted String: {list_var}")
+# sorting the string
+list_var.sort()
+# print the string
+print(f"Sorted string: {list_var}")
+# sorting while considering the lower case and upper case as the same
+list_var.sort(key = str.lower)
+# printing the sorted variable
+print(f"Sorted string list: {list_var}")
+
+# Modifying the list to be unsorted
+list_var = ["Zebra", "zebra", "Bob", "bob", "Gagan", "gagan"]
+# sorting without modifying the original list
+sorted_list = sorted(list_var, key = str.lower)
+# printing the unsorted list 
+print(f"Unsorted list: {list_var}")
+# printing the sortede list
+print(f"Sorted list {sorted_list}")
+
+# Tuples
+# creating a tuple
+names = ("Roger", "Syd", "Gagan", "Harish")
+
+# reading the content of the tuple using the indexing
+names.index("Roger")
+# checking the number of elements in the tuple
+print(f"length of the tuple:{len(names)}")
+# checking if the tuple has "Roger" in it
+print("Roger" in names)
+# slicing in tuples
+print(names[0:2])
+# sorting the contents of a tuple
+sorted_tuple = sorted(names, key = str.lower)
+# printing the sorted tuple
+print(f'Sorted tuple: {sorted_tuple}')
+
+# Combining two tuples
+newTuple = names + ("Tina", "Quincy")
+# printing the new tuple
+print(f"New tuple: {newTuple}")
+

@@ -337,3 +337,127 @@ To get the input from the user you can use the input() function.
 
 These help us to write the program to take decisions. Some of the exmaples of control statements are, if...else, switch, ternary operator etc.
 
+## Lists:
+
+It is a essential python data structure. IT can be composed of various types of data. All the elements need not be of the same datatype.
+
+You can also reference the items in the list  using index numbers. you can also have negative indexing to start checking from the last element of the list.
+
+#### Syntax:
+    dogs = ["Roger", 1, "Syd", True]
+
+You can also slice a list using the ':' operator
+
+#### Syntax:
+    spliced_list = dogs[2:3]
+
+If you leave the numbers before or after the ':' operator it will consider the start or end of the list for the missing value.
+
+### Updating the list
+
+You can update existing items in the list by using the indexing numbers.
+
+#### Syntax: 
+    dogs[2] = "Gunda"
+
+### Appending elements into the list
+
+You can also add new elements into the list using the append method.
+
+#### Syntax:
+    dogs.append("Judah")
+
+### Merging two lists
+
+You can merge two list using the extend method.
+
+#### Syntax: 
+    list_variable name.extend(new_list)
+
+### Using += operator with lists
+
+It will do the same thing as extend
+
+#### Syntax:
+    list_variable_name += new list
+
+### Removing elements from the list
+
+You can remove elements from the list using the remove method. You can also remove the last element of the list using the pop method. Pop method also returns the element that has been "popped".
+
+#### Syntax:
+    # using the remove method
+    list_variable_name.remove("element")
+    # using the pop method
+    popped_element = list_variable_name.pop()
+
+### Inserting elements to the list
+
+You can add/insert the elements to random locations of the list using the insert method. You can also add multiple elements to the list at a random location on the list using slicing.
+
+#### Syntax:
+    # adding elements to random locations on the list
+    list_variable_name.insert(index, "element_content")
+    # adding multiple elements to the list
+    list_variable_name[index_loaction:index_location] = list_to_be_inserted
+
+
+## Sorting lists
+
+Python has built in functions to sort a list. 
+
+#### Note:
+All the elements have to be of the same datatype for the sorting to work. Else, it will raise errors.
+
+While sorting the string, the sort method orders the upper case words first and then ordered the lower case words. You can fix this by using the parameter key and setting it to str.lower.
+
+#### Syntax:
+    # default sorting
+    list_variable_name.sort()
+    # sorting while considering the upper case and lower case letters as the same
+    list_varible_name.sort(key = str.lower)
+
+#### Note: 
+Sorting modifies the original list. So you will need to either run sorting on a copy of original or copy the original before sorting it. 
+
+There is a method to sort the list without modifying the original list by using a global function called 'sorted'. The 'sorted' function need the list to be sorted as an argument and you can set the 'key' to 'str.lower' to get a more conventional sorting. 
+
+#### Syntax:
+    # sorting
+    sorted_list = sorted(list_variable_name, key = str.lower)
+
+## Tuples:
+
+Tuples are a fundamental data structure of python. They allow us to create a immutable groups or objects. Immutable meaning, once an object is created it cannot be modified.
+
+You can't add or remove items in a tuple.
+
+You can use negative index like other datatypes and data structure of python. You can also find the number of elements in the tuple using the 'len' method.
+
+#### Syntax:
+    # creating the tuple
+    names = ("Roger", "Syd")
+    # getting the content of the tuple using index value
+    print(names[0])
+
+#### Note:
+You can get the index value of a element in the tuple of list using the index method
+
+##### Syntax: 
+    # Index of an element from the tuple
+    names.index("Roger")
+
+### Sorting the contents of a tuple
+
+You can sort the contents of a tuple using the global function "sorted". Note this using sorted will not modify the original argument.
+
+#### Syntax:
+    # sorting contents of the tuple
+    sorted_tuple = sorted(names, key = str.lower)
+
+### Combining tuples
+
+You can combine two tuples to create a new tuple using the '+' operator.
+
+#### Syntax:
+    newTuple = names + ("Tina", "Quincy")
