@@ -486,6 +486,7 @@ You can access the values in the dicitonary similar to the way you access conten
 A simple analogy for understanding dictionaries. You can think of a dictionary as a 1D array in which you can name the index's and reference the value of the array using the named index instead of the numerical index value.
 
 ### "get" method to access the key-value pair:
+
 You can also access the content of the dictionary using the "get" method. 
 
 ##### Advantages of using "get" method:
@@ -532,7 +533,29 @@ Yoi can get a list containing all the keys of the dictionary using the keys meth
     # print a list containing the keys of the dictionary
     print(dog.keys())
 
+### Getting a list of all the values in a dictionary
 
+Similar to getting a list of all the keys in the dictionary, you can also get a list of all the values in the dictionary using the values method.
 
+#### Syntax
+    # print a list of all the values of the dictionary
+    print(dog.values())
 
+### Getting a list of all the items in a dictionary
 
+You can get a list of all the items in a dictionary using the items method.
+
+#### Syntax:
+    # creating a list of all the items in a dictionary
+    print(list(dog.items()))
+
+#### Note: 
+You can find the length of the list using the len() method.
+
+### Adding a key value pair to the dictionary
+
+You can add new key-value pair to existing dictionary using the following syntax.
+
+#### Syntax:
+    # adding a new key-value pair to the dictionary
+    dog["food":"Meat"]

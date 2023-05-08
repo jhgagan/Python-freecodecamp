@@ -190,3 +190,25 @@ print(dog)
 
 # checking if there is a "name" key in dog dictionary
 print("name" in dog)
+# printing the list of the keys of a dictionary
+print(dog.keys())
+
+# printing the list of values of a dictionary
+print(dog.values())
+# printing the list of all the values
+print(list(dog.items()))
+
+# adding a new key value pair to the dictionary
+dog["food"] ="Meat"
+# printing the updated dictionary
+print(dog)
+
+# delete a key-value pair from the dictionary
+del dog["age"]
+# printing the key-value pair from the updated dictionary
+print(dog)
+
+# Creating a copy of a dictionary
+dogCopy = dog.copy()
+# printing the copy of the dictionary
+print(f"Copy of the dog dictionary: {dogCopy}")
