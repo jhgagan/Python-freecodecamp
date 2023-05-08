@@ -157,3 +157,36 @@ newTuple = names + ("Tina", "Quincy")
 # printing the new tuple
 print(f"New tuple: {newTuple}")
 
+# creating dictionary
+dog = {"name":"Roger", "age" : 8}
+
+# accessing the data stored in the dictionary. 
+# printing the name of the dog variable. 
+print("name: "+dog["name"])
+
+# you can also access the content of the dicitonary using the get method.
+print("name"+dog.get("name"))
+
+# assigning a default value to a key from the get method
+# here the dog dictionary doesn't have a color variable so it should return "brown"
+print("color: "+dog.get("color", "brown"))
+
+# Let's add a color key and value pair and try the above statement again
+dog = {"name":"Roger", "age" : 8, "color":"green"}
+# Let's print the value of the color key using the get method
+print("color: "+dog.get("color", "brown"))
+
+# using the pop method
+print(dog.pop("name"))
+# printing the dog dictionary to observe the changes in the dictionary
+print(dog)
+
+# creating the dictionary with 3 key value pair 
+dog = {"name":"Roger", "age" : 8, "color":"green"}
+# using the popitem function
+print("last item: "+str(dog.popitem()))
+#printing the dictionary
+print(dog)
+
+# checking if there is a "name" key in dog dictionary
+print("name" in dog)

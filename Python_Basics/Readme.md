@@ -461,3 +461,78 @@ You can combine two tuples to create a new tuple using the '+' operator.
 
 #### Syntax:
     newTuple = names + ("Tina", "Quincy")
+
+## Dictionaries 
+
+It is another important data structure of python. While list allows us to create a collection of values, dictionaries allows us to create a collection of key:value pairs. 
+
+We already discussed dictionaries while creating the Rock, Paper, and Scissor game.  
+
+Dictionaries contain a key and a corresponding value to the key. The example below will make it more clearer.
+
+#### Syntax:
+    # Creating the dictionary
+    dog = {"name":"Roger", "age": 8}
+
+The key can be any immutable value such as a string, number etc. Same hold true for the value as well.  It can be of any basic data type.
+
+In the above mentioned example, "name" and "age" are the key values and, "Roger" and 8 are the values of the corresponding key value.
+
+### Accessing the values in the dictionary:
+
+You can access the values in the dicitonary similar to the way you access contents in an array 1D array.
+
+#### Note:
+A simple analogy for understanding dictionaries. You can think of a dictionary as a 1D array in which you can name the index's and reference the value of the array using the named index instead of the numerical index value.
+
+### "get" method to access the key-value pair:
+You can also access the content of the dictionary using the "get" method. 
+
+##### Advantages of using "get" method:
+
+- You can assign a default value if you find out that the key you are looking for in the dictionary doesn't exist. The example is given below
+
+#### Syntax:
+    # using the get method to read through the contents of the dictionary
+    print("name"+dog.get("name"))
+    # assigning a default value to a key from the get method
+    print(dog.get("color", "brown"))
+
+Here the dog.get("color", "brown") will return the "color" value from the dictionary. But, if it doesn't exist then the default value "brown" will be returned.
+
+You can also use pop method to retried a key value pair from the dictionary and delete it from the dictionary at the same time. 
+
+#### Syntax:
+    # Poping the "name" key value pair
+    print(dog.pop("name"))
+    # Printing the dog dictionary to see the changes
+    print(dog)
+
+### "popitem" method
+
+This method can be used to retrieve the last key-value pair inseted into the dictionary. Note that the "popitem" item method returns the key value pair as a tuple.
+
+#### Syntax:
+    # using the popitem function
+    print("last item: "+str(dog.popitem()))
+
+### Checking for a key in a dictionary
+
+You can check if there is a specific key in the dictionary using the "in" opertor. 
+
+#### Syntax:
+    # Checking if there is a "color" in dog dictionary
+    print("color" in dog)
+
+### Getting a list of all the keys in a dictionary
+
+Yoi can get a list containing all the keys of the dictionary using the keys method.
+
+#### Syntax: 
+    # print a list containing the keys of the dictionary
+    print(dog.keys())
+
+
+
+
+
