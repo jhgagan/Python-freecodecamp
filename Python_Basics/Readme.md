@@ -753,9 +753,21 @@ If there is any statements after the return statements, they will not be execute
 
 #### Syntax:
     #Function definition
-    def hello(name)
+    def hello(name):
         if not name:
             return
         print(f"Hello {name}!")
     
     hello("Beau")
+
+    # Function that returns a value:
+    def return_value(name):
+        print(f"Hello {name}!")
+        return name, "Beau", 8
+
+    # Printing the retured value
+    print(hello("Syd"))
+    # storing the returned value in variables
+    ret_name, ret_name2, ret_val = return_value("Syd")
+
+## Variable Scope:
