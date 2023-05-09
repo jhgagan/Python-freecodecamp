@@ -771,3 +771,72 @@ If there is any statements after the return statements, they will not be execute
     ret_name, ret_name2, ret_val = return_value("Syd")
 
 ## Variable Scope:
+
+When you declare a variable, the visibility of the variable in different parts of the code varies on a variety of factors. for exmaple, a variable declared inside the function body is not necessarily visible outside the body of the function. But it is possible to make it be visible to the code outside the body of the function by declaring it as a global variable.
+
+This is to be noted as this can at time cause semantic errors. (Semantic errors - The syntax will not necessarily raise an error but you might not get the desired output as the meaning of the code is different.)
+
+## Nested Funtion
+
+Functions in python can be nested inside other functions. This function that is declared inside a function is only visible wihtin that function.
+
+An example of nested function is given below, 
+
+#### Syntax:
+    # Function definition
+    def talk(phrase):
+    # nexted function definition
+        def say(word):
+            print(word)
+        
+        words = phrase.split(' ')
+        # Loops will be explained at a later stage
+        for word in words:
+            say(word)
+    
+    talk('I am going to buy milk')
+
+
+#### Note: 
+if you want to access the variable that is declared within in the function but not inside the nested function, then you have to use 'nonlocal' before the varibale name when using it for the first time within the nested function. 
+
+An example of the above scenario is exmplained below,
+
+#### Syntax:
+    def count():
+        count = 0
+
+        def increment():
+            nonlocal count
+            count = count + 1
+            print(count)
+
+        increment()
+
+    count()
+
+## Closures
+
+This is an inner function object, a function that behaves like an object, that remembers and has access to variables in the local scope in which it was created even after the outer function has finished executing.
+
+An example for this is given below,
+
+#### Syntax:
+    def counter():
+        count = 0
+
+        def increment():
+            nonlocal count
+            count = count + 1
+            return count
+
+        # here we are returning the nested function like it is a variable
+        return increment
+
+    increment = counter()
+
+    # when you run this you will notice that the count value keep increasing after each call even though 
+    # count value is to be reset to 0 when counter function is directly called
+    print(f"Increment 1:{increment()}")
+    print(f"Increment 2:{increment()}")
+    print(f"Increment 3:{increment()}")

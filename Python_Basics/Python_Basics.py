@@ -349,3 +349,54 @@ def return_value(name):
 print(return_value("Syd"))
 # Storing the returned value in variables
 ret_name, ret_name2, ret_val = return_value("Syd")
+
+# Nested function
+
+# Function definition
+def talk(phrase):
+# nexted function definition
+    def say(word):
+        print(word)
+
+    words = phrase.split(' ')
+    for word in words:
+        say(word)
+    
+talk('I am going to buy milk')
+
+# nonlocal variable usage example
+
+def count():
+    count = 0
+
+    def increment():
+        # using this we can access the count variable declared outside the increment function
+        nonlocal count
+        # increment the function
+        count = count + 1
+        print(count)
+
+    increment()
+
+count()
+
+# Closure example
+
+def counter():
+    count = 0
+
+    def increment():
+        nonlocal count
+        count = count + 1
+        return count
+
+    # here we are returning the nested function like it is a variable
+    return increment
+
+increment = counter()
+
+# when you run this you will notice that the count value keep increasing after each call even though 
+# count value is to be reset to 0 when counter function is directly called
+print(f"Increment 1:{increment()}")
+print(f"Increment 2:{increment()}")
+print(f"Increment 3:{increment()}")
