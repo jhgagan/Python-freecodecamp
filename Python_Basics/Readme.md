@@ -664,3 +664,98 @@ The syntax to perform this operation is given below.
 All the elements of the set are unique. You will not have copies of the terms in a set.
 
 ### Functions:
+
+Functions help us write a set of instructions that we can run when we need, any number of times. Using functions makes is a lot easier to read and reuse repetitive code with ease.
+
+Functions can also accept one or more parameters.
+
+Some terms to note while we discuss about the funtions,
+- function definition - This is the part where the set of instructions/statements of the function are defined. This is usually done before you call a function. 
+- function call - This is how you run the function within the main code. The function call is done by mentioning the name of the function with its argumnets list as given below, 
+
+#### Syntax:
+    function_name(arguments)
+
+
+The syntax for the definition of a function is given below.
+
+#### Syntax:
+    # Function definition
+    def hello():
+        # body of the function
+        print('Hello!')
+
+    # function call 
+    hello()
+
+### Funtion with parameter/s:
+Function can accept a variety of parameters. The data of parameters has to be the same as in the function definiton. 
+
+An example of a function with a parameter is given below.
+
+#### Syntax:
+    # Function that accepts a parameter.
+    def hello(name): # 'name' is called an argument here
+        # body of the function
+        print('Hello!' + name)
+
+    # function call 
+    hello("Roger") # "Roger" is called a parameter
+
+An argument can have a default value, so that if no value is passed the default value will be used.
+
+The syntax for this is given below, 
+
+#### Syntax:
+    # Function that accepts a parameter.
+    def hello(name = "my friend"): # 'name' is called an argument here
+        # body of the function
+        print('Hello!' + name)
+
+    # function call 
+    hello("Roger") # "Roger" is called a parameter  
+
+We can also accept multiple parameters. The syntax and explaination for this is given below.
+
+#### Syntax:
+    # Function that accepts parameters.
+    def hello(age, name = "my friend"): # 'name' is called an argument here
+        # body of the function
+        print('Hello!' + name + ", You are "+ str(age)+ "Years old")
+
+    # function call 
+    hello(10, "Roger") # "Roger" is called a parameter  
+    hello(10)
+
+### Note:
+
+Parameters are passed by reference, What does that mean?
+It means that if you pass a (immutable) variable to a function and you modify the value of the variable in the function. The modifications done on the variable will not be valid outside the function. 
+
+The explanation of mutability and immutability along with a list of the datatypes of each category can be found in this link - https://realpython.com/python-mutable-vs-immutable-types/#:~:text=Python%20has%20both%20mutable%20and,dictionaries%2C%20and%20sets%20are%20mutable.
+
+The code snippet below will be an example to the explaination above.
+#### Syntax:
+    def change(num):
+        num = 2
+        print(f"Changed value = {num}")
+    
+    num = 1
+    change(num)
+    print(f"value of num = {num}")
+
+### Returning a value from a function
+
+A function can also return value/s. This is performed using the 'return' statement. 
+
+#### Note: 
+If there is any statements after the return statements, they will not be executed. 
+
+#### Syntax:
+    #Function definition
+    def hello(name)
+        if not name:
+            return
+        print(f"Hello {name}!")
+    
+    hello("Beau")

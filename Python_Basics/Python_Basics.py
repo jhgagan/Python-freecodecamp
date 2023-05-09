@@ -266,3 +266,86 @@ print(f"List of all the elements persent in set1: {list_set}")
 check  = "Roger" in set1
 # Printing the check condition
 print("Is \"Roger\" an element of the set " + str(check))
+
+# Function definition
+def hello():
+    # body of the function
+    print('Hello!')
+
+# function call 
+hello()
+
+# Function that accepts a parameter
+def hello(name):
+    # body of the function
+    print('Hello! ' + name)
+
+# function call 
+hello("Roger")
+hello("Quincy")
+
+# Function that accepts a parameter
+def hello(name = "my friend"):
+    # body of the function
+    print('Hello! ' + name)
+
+# function call 
+hello("Roger")
+hello("Quincy")
+hello()
+
+# Function that accepts parameters
+def hello(age, name = "my friend"):
+    # body of the function
+    print(f'Hello! {name}, you are {age} years old')
+
+# function call 
+hello(39 ,"Roger")
+hello(40)
+
+# Explanation to passing by reference
+def change(num):
+    num = 2
+    print(f"Changed value = {num}")
+   
+num = 1
+print(f"value of num = {num}")
+change(num)
+print(f"value of num = {num}")
+
+# Example for datatype in which the changes done in the function is reflected outside the function defintion
+def change(num):
+    num["value"] = 3
+    print(f"Changed value = {num}")
+   
+num = {"value": 2 }
+print(f"value of num = {num}")
+change(num)
+print(f"value of num = {num}")
+
+
+#Function definition
+def hello(name):
+    if not name:
+        return
+    print(f"Hello {name}!")
+    
+hello("Beau")
+
+#Function definition
+def hello(name):
+    if not name:
+        return
+    print(f"Hello {name}!")
+    
+hello("Beau")
+
+# Function that returns a value:
+def return_value(name):
+    print(f"Hello {name}!")
+    return name, "Beau", 8
+
+# Printing the retured value
+print(return_value("Syd"))
+# Storing the returned value in variables
+ret_name, ret_name2, ret_val = return_value("Syd")
