@@ -558,4 +558,109 @@ You can add new key-value pair to existing dictionary using the following syntax
 
 #### Syntax:
     # adding a new key-value pair to the dictionary
-    dog["food":"Meat"]
+    dog["food"] = "Meat"
+
+### Deleting a key value pair from the dictionary
+
+You can delete a key-value pair from the dictionary using the del method. The syntax to use the method is given below.
+
+#### Syntax:
+    # delete the key-value pair with key "color"
+    del dog['color']
+
+### Copy dictionary
+
+You can also create copies of the dictionary using the copy method. The syntax for it is given below.
+
+#### Syntax:
+    # copying the dog dictionary to dogCopy
+    dogCopy = dog.copy()
+
+## Sets
+
+This is another important data structures of python. They are similar to tuples, but they aren't ordered and they are mutable, meaning they can be changed. They also have an immutable version called frozen set.
+
+In some ways, they are dictionares without keys.
+
+### Creating a set
+
+You can create a set using the syntax given below.
+
+#### Syntax:
+    names = {"Roger", "Syd"}
+
+### Intersection of two sets:
+
+As we would have learnt in set theroy, intersection of two sets is the terms that are common in both the sets. The intersection of two sets is performed using '&' operator.
+
+You can perform this operation using the syntax given below.
+
+#### Syntax:
+    # creating two sets to give a example intersection
+    set1 = {"Roger", "Syd"}
+    set2 = {"Roger"}
+    # intersection of the above two sets is done using this statement.
+    intersect = set1 & set2
+    # the term common to both the sets is "Roger" so that should be the output
+
+### Union of two sets:
+
+We can also perfrom the union of two sets. The "|" is used to perform the union operation. This operation is achieved using the syntax provided below.
+
+#### Syntax:
+    # creating two disjoint sets to better explain the union
+    set1 = {"Roger", "Syd"}
+    set2 = {"Gunda", "Tommy"}
+    # Union of two sets
+    union = set1 | sets 2
+
+### Difference of two sets:
+
+We can perform the difference of two sets using the '-' operator. The difference of two sets is a set of the terms that is present in the first set but not in the second set.
+
+The syntax for this operation is given below.
+
+#### Syntax:
+    # Ceating two sets
+    set1 = {"Roger", "Syd"}
+    set2 = {"Roger"}
+    # Difference of two sets
+    diff = set1 - set2
+
+### Super-set or Sub-set Check
+
+You can also check if a set is super-set or sub-set of another set.
+
+A set is called the super set of another if it contains all the terms present in the second set and more.
+
+The syntax to perform this operation is given below.
+
+#### Syntax:
+    # Ceating two sets
+    set1 = {"Roger", "Syd"}
+    set2 = {"Roger"}
+    # Super-set check
+    super_set= set1 > set2
+    # Here the set1 contains all the elements preset in set 2, so it is the super-set.
+
+
+A set is called a sub set of another if it only contains the terms that are present in another set.
+
+The syntax to perform this operation is given below.
+
+#### Syntax:
+    # Ceating two sets
+    set1 = {"Roger", "Syd"}
+    set2 = {"Roger"}
+    # Sub-set check
+    sub_set= set2 < set1
+    # Here the set2 contains only the elements preset in set 1, so it is the sub-set.
+
+#### Note: 
+- You can also count the number of terms in a set using the len() function.
+- You can also get a list of the elements in the set by passing the set to the (list) constructor
+- You can if an item is contained in the set using the 'in' operator
+
+All the elements of the set are unique. You will not have copies of the terms in a set.
+
+### Functions:

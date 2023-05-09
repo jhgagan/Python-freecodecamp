@@ -212,3 +212,57 @@ print(dog)
 dogCopy = dog.copy()
 # printing the copy of the dictionary
 print(f"Copy of the dog dictionary: {dogCopy}")
+
+# Set creation
+set1 = {"Roger", "Syd"}
+set2 = {"Roger"}
+
+# Intersection of the two sets
+intersect = set1 & set2
+# Print the intersect
+print(f"Intersection of two sets:{intersect}")
+
+# creating two disjoint sets to better explain the union
+set1 = {"Roger", "Syd"}
+set2 = {"Gunda", "Tommy"}
+#Union of two sets
+union = set1 | set2
+# prinitng the union
+print(f"Union of two sets:{union}")
+
+# Creating two sets to explain the difference operation
+set1 = {"Roger", "Syd"}
+set2 = {"Roger"}
+# Difference of two sets
+diff = set1 - set2
+# printing the difference
+print(f"difference of two sets: {diff}")
+
+# Ceating two sets
+set1 = {"Roger", "Syd"}
+set2 = {"Roger"}
+# Super-set check
+super_set= set1 > set2
+#printing the super set check
+print(f"Is set1 the super set of set2: {super_set}")
+
+# Ceating two sets
+set1 = {"Roger", "Syd"}
+set2 = {"Roger"}
+# Sub-set check
+sub_set= set2 < set1
+# printing the sub set check
+print(f"Is set2 the sub set of set1: {sub_set}")
+
+# count and print the number of terms in a set
+print(f"Number of terms in set1 is {len(set1)}")
+
+# getting a list containing the elements of the set
+list_set = list(set1)
+# Printing the list of set elements
+print(f"List of all the elements persent in set1: {list_set}")
+
+# checking if "Roger" is a element of the set
+check  = "Roger" in set1
+# Printing the check condition
+print("Is \"Roger\" an element of the set " + str(check))
