@@ -840,3 +840,74 @@ An example for this is given below,
     print(f"Increment 1:{increment()}")
     print(f"Increment 2:{increment()}")
     print(f"Increment 3:{increment()}")
+
+## Objects
+
+Everything in python is an object. Even values of basic primitive types, like integers, string , floats, list,tuples, etc. Objects have attributes and methods. They can be accessed using the (.) dot syntax.
+
+#### Syntax:
+    # age is created as areal number so it has both a real part and an imaginary part
+    age = 8
+    print(age.real)
+    print(age.imag)
+    # you can also get the bit length of the variable age
+    print(age.bit_length)
+
+A variable holding a list value has access to a different set of methods.
+
+#### Syntax:
+    items = [1, 2]
+    items.append(3)
+    items.pop()
+    # this prints the location in the memory
+    print(id(items))
+
+So, the method available to a variable depends on the datatype of the variable
+
+#### Note:
+If an objects provides methods to change the contents of the variable then it is mutable. If it doesn;t provide methods to change the contents of the variable then it is immutable.
+
+## Loops
+
+It is an essential part of programming. In python we have two types of loops, 
+- While loop
+- For loop
+
+### While loop:
+They are defined using the while keyword. They repeat the contents of the body of the while loop until the condition is false
+
+#### Syntax:
+    while condition == True:
+        print("The condition is True")
+
+Example of a while loop with a counter is given below, 
+
+#### Syntax:
+    count = 0
+    while count < 10:
+        print("The condition is True")
+        count = count + 1
+
+    print("After the loop")
+
+### For loop:
+This is used when you want to run the body of the for loop a specific number of time. 
+
+####  Syntax:
+    for item in range(15):
+        print(item)
+
+For loop can also be used to iterate through lists and dictionaries.
+
+#### Syntax:
+    items = [1, 2, 3, 4]
+    for item in items:
+        print(item) 
+
+#### Note:
+If we want to get the index of the element in the list, we can use enumerate.
+
+#### Syntax:
+    item = [1, 2, 3, 4]
+    for index, item in enumerate(items):
+        print(index, item)

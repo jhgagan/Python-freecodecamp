@@ -400,3 +400,50 @@ increment = counter()
 print(f"Increment 1:{increment()}")
 print(f"Increment 2:{increment()}")
 print(f"Increment 3:{increment()}")
+
+# age is created as areal number so it has both a real part and an imaginary part
+age = 8
+print(age.real)
+print(age.imag)
+# you can also get the bit length of the variable age
+print(age.bit_length)
+# Bit length is the number of digits necessary to represent the number as a binary
+
+items = [1, 2]
+items.append(3)
+items.pop()
+# this prints the location in the memory
+print(id(items))
+
+# While loop example
+condition = True
+# having condition = True here will create a infinite loop without the
+# last statement (condition = False).
+# infinite loops are dangerous, always avoid infinite loops.
+while condition == True:
+    print("The condition is True")
+    condition = False
+
+# While loop counter
+count = 0
+while count < 10:
+    print("The condition is True")
+    count = count + 1 # count += 1 
+
+print("After the loop")
+
+# For loop
+for item in range(15):
+    print(item)
+
+# for loop for iterating through a list
+items = [1, 2, 3, 4]
+for item in items:
+    print(item)
+
+# For loop to get the index of the elements of the list
+item = [1, 2, 3, 4] 
+# this doesn't have to be a list of numbers
+# It can also be a list of stings or characters etc.
+for index, item in enumerate(items):
+    print(index, item)
