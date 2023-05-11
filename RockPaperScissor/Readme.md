@@ -152,5 +152,3 @@ This will help you make strings with variables and strings
 
 Output for the above provided code will be:
 Jim is 25 years old.
-
-
