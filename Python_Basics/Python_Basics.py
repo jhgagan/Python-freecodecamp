@@ -447,3 +447,31 @@ item = [1, 2, 3, 4]
 # It can also be a list of stings or characters etc.
 for index, item in enumerate(items):
     print(index, item)
+
+# Continue 
+items = [1, 2, 3, 4]
+for item in items:
+    if item == 2:
+        continue
+    # in this loop when the item is 2 the print will be skipped
+    print(item)
+
+# Break
+items = [1, 2, 3, 4]
+for item in items:
+    if item == 2:
+        continue
+    # in this case the cases 3 and 4 will never be considered as it will exit # from the loop altogether
+    print(item)
+
+# Class 
+class Dog:
+    # self is an argument of the instance that will point to itself
+    # if it is too technical just keep in mind that this is how you create a # memeber function 
+    def bark(self):
+        print("woof!")
+
+# creating an instance of the class
+roger = Dog()
+# printing the type of roger
+print(type(roger))

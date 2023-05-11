@@ -911,3 +911,56 @@ If we want to get the index of the element in the list, we can use enumerate.
     item = [1, 2, 3, 4]
     for index, item in enumerate(items):
         print(index, item)
+
+
+## Break and continue
+
+While and for loops can be intereupted and prematurely stopped from continuing execution using the break and continue statements.
+
+### Cotinue: 
+
+It stops the current interation and tells the loop to start the next iteration.
+In basic words it means that continue skips an interation.
+
+#### Syntax:
+    items = [1, 2, 3, 4]
+    for item in items:
+        if item == 2:
+            continue
+        # in this loop when the item is 2 the print will be skipped
+        print(item)
+
+### Break:
+
+Break stops the loop altogether and contiues with the instruction after the loop end.
+
+#### Syntax:
+    items = [1, 2, 3, 4]
+    for item in items:
+        if item == 2:
+            continue
+        # in this case the cases 3 and 4 will never be considered as it will exit # from the loop altogether
+        print(item)
+
+## Classes
+
+Classes is a user defined datatype that is comprised of a variety of system defined datatypes and memeber functions.
+
+From classes one can instancitate Object.
+
+An Object is an instance of a class. 
+
+A class is the type of an object.
+
+#### Syntax:
+
+    class Dog:
+        # self is an argument of the instance that will point to itself
+        # if it is too technical just keep in mind that this is how you create a # memeber function 
+        def bark(self):
+            print("woof!")
+
+    # creating an instance of the class
+    roger = Dog()
+    # printing the type of roger
+    print(type(roger))
