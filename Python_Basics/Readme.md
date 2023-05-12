@@ -953,7 +953,6 @@ An Object is an instance of a class.
 A class is the type of an object.
 
 #### Syntax:
-
     class Dog:
         # self is an argument of the instance that will point to itself
         # if it is too technical just keep in mind that this is how you create a # memeber function 
@@ -964,3 +963,114 @@ A class is the type of an object.
     roger = Dog()
     # printing the type of roger
     print(type(roger))
+
+### __init__ Constructor
+
+This is a special type of function that is a constructor. An example of how to create this constructor is given below. Constructor is used to predefine the values for some of the variables associated with the object during the time of instanciation of the object.
+
+#### Syntax:
+    class Dog:
+        def __inti__(self, name, age):
+            # this will assing he values from variables name and age to the member variables at the time of object instancitaion.
+            self.name = name
+            self.age = age
+
+        # self is an argument of the instance that will point to itself
+        # if it is too technical just keep in mind that this is how you create a # memeber function 
+        def bark(self):
+            print("woof!")
+
+    # creating an instance of the class
+    roger = Dog("Roger", 8)
+    # printing the name, age of the Dog() object
+    print(roger.name)
+    print(roger.age)
+    # calling the bark method of the roger object
+    roger.bark()
+
+### Inheritance:
+
+Inheritance is a very important feature of class. This allows the inherited class (child class) to be able to access a copy of the parent class. This can be very useful when we want to have different classes with similar structure with minor difference.
+
+Example of inheritance is given below.
+
+#### Syntax:
+    # Parent class
+    class Animal():
+        def walk(self):
+            print("Walking...")
+
+    class Dog(Animal): # Dog class inherits the Animal Class
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+        def bark(self):
+            print("woof!")
+
+    # Instanciating the Object variable roger of the class Dog 
+    roger = Dog("Roger", 8)
+
+    # printing the values in the name and age variables
+    print(roger.name)
+    print(roger.age)
+
+    # calling a memeber function
+    roger.bark()
+
+    # calling a function of the parent class
+    roger.walk()
+
+## Modules
+Every python file is a module. You can import a module from other files.
+
+An example of how to import a module is given below, 
+
+#### Syntax:
+
+First we create as dog.py file and write the code given below,
+    def bark():
+        print("Woof!")
+
+In the main file you write the code given below, 
+    # Modules
+    # Method 1
+    import dog
+
+    dog.bark()
+
+    # Method 2
+    # importing only the necessary function
+    from dog import bark
+
+    bark()
+
+In the above two examples the module that is being imported is located in the same location as the file that is using the module. 
+
+But, if the module that is to be used is in a different location then, we use the following method.
+    # The module to be imported is in the lib folder
+    # To be able to import the dog_sub.py module in the Python_basics.py file we first need to create an empty "__inti__.py" file in the lib folder. This tells python that there is a module that can be imported by other files. 
+    # Then we can use the same code as mentioned in Method 1 or Method 2.
+
+A list of some of the common modules availabe are given below,
+
+- math for math utilities
+- re for regular expressions
+- json to work with JSON
+- datetime to work with dates
+- sqlite3 to use SQLite
+- os for Operating System utilities 
+- random for random number generation
+- statistics for statistics utilities
+- requests to perform HTTP network requests
+- http to create HTTP servers
+- urllib to manage URLs
+
+Example of using one of these libraries is given below, 
+
+#### Syntax:
+    import math
+
+    print(f"Squrare root of 4:{math.sqrt(4)}")
+
+    

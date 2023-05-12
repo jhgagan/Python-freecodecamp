@@ -475,3 +475,72 @@ class Dog:
 roger = Dog()
 # printing the type of roger
 print(type(roger))
+
+# Constructor of a class example
+class Dog:
+    def __inti__(self, name, age):
+        # this will assing he values from variables name and age to the member variables at the time of object instancitaion.
+        self.name = name
+        self.age = age
+
+    # self is an argument of the instance that will point to itself
+    # if it is too technical just keep in mind that this is how you create a # memeber function 
+    def bark(self):
+        print("woof!")
+
+# Inheritance example
+
+# Parent class
+class Animal():
+    def walk(self):
+        print("Walking...")
+
+class Dog(Animal): # Dog class inherits the Animal Class
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("woof!")
+
+# Instanciating the Object variable roger of the class Dog 
+roger = Dog("Roger", 8)
+
+# printing the values in the name and age variables
+print(roger.name)
+print(roger.age)
+
+# calling a memeber function
+roger.bark()
+
+# calling a function of the parent class
+roger.walk()
+
+# Modules
+# Method 1
+# importing all the functions defined in a file 
+import dog
+
+dog.bark()
+
+# Method 2
+# importing only the necessary function
+from dog import bark
+
+bark()
+
+# importing a file from a sub folder
+from lib import dog_sub
+
+dog_sub.bark_sub()
+
+# import in a specific function from the module in a subfolder
+from lib.dog_sub import bark_sub
+
+bark_sub()
+
+# using a standard library modules
+import math
+# printing the square root of 4 that is computed using the sqrt method of the math module
+
+print(f"Squrare root of 4:{math.sqrt(4)}")
