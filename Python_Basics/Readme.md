@@ -1079,6 +1079,7 @@ First let's learn how to run the python code from command line.
 
 #### Shell Syntax:
 In terminal or shell we type the command given below, 
+    
     python filename.py
 
 ### Using package sys
