@@ -544,3 +544,28 @@ import math
 # printing the square root of 4 that is computed using the sqrt method of the math module
 
 print(f"Squrare root of 4:{math.sqrt(4)}")
+
+# Accepting Arguments from the command line
+
+# This module is necessary to be able to accept arguments from the system command line
+import sys
+
+# printing the arguments from the system
+print(sys.argv)
+
+# just the argument
+name = sys.argv[1]
+
+# Accepting arguments from the command line using the argparse package
+import argparse
+
+parser = argparse.ArgumentParser(
+    description='This program prints the name of my dogs'
+    )
+
+parser.add_argument('-c', '--color', metavar = 'color',
+                    required = True, choices={'red','yellow'} ,help = 'the color to search for')
+
+args = parser.parse_args()
+
+print(args.color)

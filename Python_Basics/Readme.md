@@ -1073,4 +1073,65 @@ Example of using one of these libraries is given below,
 
     print(f"Squrare root of 4:{math.sqrt(4)}")
 
-    
+## Arguments from Command line
+
+First let's learn how to run the python code from command line. 
+
+#### Shell Syntax:
+In terminal or shell we type the command given below, 
+    python filename.py
+
+### Using package sys
+Now, let's see how to pass in the arguments from the command line. For being able to accept the arguments from the command line we have to do some changes to the python code. 
+
+We will have to import the "sys" module. The "sys.argv" contains the arguments that is passed from the shell/terminal.
+
+#### Syntax:
+    # importing the sys module
+    import sys
+    # printing the arguments that were accepted from the shell or terminal
+    print(sys.argv)
+
+This is one way to do it. But, it is a very cumbersome way to accept arguments from the terminal as the programmer has to account for the datatype and checking if the accepted argument is of the correct datatype or not.
+
+There is another way to accept the arguments from the terminal. For this we will be using a differnt package called "argparse".
+
+Let's see how to use this module.
+
+### Using package argparse
+
+Using this package we can accept arguments in a very organised way. An example of how to use this package to accept arguments from the command line is given below.
+
+#### Syntax:
+    # Accepting arguments from the command line using the argparse package
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='This program prints the name of my dogs'
+        )
+
+    parser.add_argument('-c', '--color', metavar = 'color',
+                        required = True, help = 'the color to search for')
+
+    args = parser.parse_args()
+
+    print(args.color)
+
+#### Shell Command:
+    python filename.py -c red
+
+you can also set the choices. That way one can only parse a particular value that is present in the choice. An example of that is given below.
+
+#### Syntax:
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='This program prints the name of my dogs'
+        )
+
+    parser.add_argument('-c', '--color', metavar = 'color',
+                        required = True, choices={'red','yellow'} ,help = 'the color to search for')
+
+    args = parser.parse_args()
+
+    print(args.color)
