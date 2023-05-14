@@ -1136,3 +1136,27 @@ you can also set the choices. That way one can only parse a particular value tha
     args = parser.parse_args()
 
     print(args.color)
+
+## Lambda Functions
+
+These functions are very small and only have one expression as their body. These functions do not have a name. To define the lambda functions you have to use the "lambda" keyword followed by the argument and then the expression.
+
+#### Note:
+The body of the lambda function has to be an expression and not a statement. An expression returns a value and a statement doesn't.
+
+lambda functions cannot be invoked directly but you can assign them to a variable. as given in the example.
+
+#### Syntax:
+    # Lambda function definition with just one argument
+    lambda num : num * 2
+
+    # lambda function with more than one argument
+    lambda a, b : a * b
+
+    # assigning a lambda function to a variable
+    multiply = lambda a, b : a * b
+
+    # calling the lambda function
+    print(multiply(2, 4))
+
+lambda functions can be very useful when used with map, filter and reduce functions

@@ -545,27 +545,39 @@ import math
 
 print(f"Squrare root of 4:{math.sqrt(4)}")
 
-# Accepting Arguments from the command line
+# # Accepting Arguments from the command line
 
-# This module is necessary to be able to accept arguments from the system command line
-import sys
+# # This module is necessary to be able to accept arguments from the system command line
+# import sys
 
-# printing the arguments from the system
-print(sys.argv)
+# # printing the arguments from the system
+# print(sys.argv)
 
-# just the argument
-name = sys.argv[1]
+# # just the argument
+# name = sys.argv[1]
 
-# Accepting arguments from the command line using the argparse package
-import argparse
+# # Accepting arguments from the command line using the argparse package
+# import argparse
 
-parser = argparse.ArgumentParser(
-    description='This program prints the name of my dogs'
-    )
+# parser = argparse.ArgumentParser(
+#     description='This program prints the name of my dogs'
+#     )
 
-parser.add_argument('-c', '--color', metavar = 'color',
-                    required = True, choices={'red','yellow'} ,help = 'the color to search for')
+# parser.add_argument('-c', '--color', metavar = 'color',
+#                     required = True, choices={'red','yellow'} ,help = 'the color to search for')
 
-args = parser.parse_args()
+# args = parser.parse_args()
 
-print(args.color)
+# print(args.color)
+
+# Lambda function definition with just one argument
+lambda num : num * 2
+
+# lambda function with more than one argument
+lambda a, b : a * b
+
+# assigning a lambda function to a variable
+multiply = lambda a, b : a * b
+
+# calling the lambda function
+print(multiply(2, 4))
