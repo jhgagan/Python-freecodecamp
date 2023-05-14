@@ -581,3 +581,54 @@ multiply = lambda a, b : a * b
 
 # calling the lambda function
 print(multiply(2, 4))
+
+# list
+numbers = [1, 2, 3]
+
+# this funcion can be replaced by a lambda function as it is easier
+#def double(a):
+#    return a * 2
+
+# you can also just declare the lambda function as a argument of map as given below
+double = lambda a : a * 2
+
+# this will iterate through each item in the list and create a new list
+#result = map(double, numbers)
+result = map(lambda a : a * 2, numbers)
+
+# printing the result
+print(f"New list that is created by the map function{list(result)}")
+
+# # function that returns True or False
+# def isEven(n):
+#     return n % 2 == 0
+
+# # The above function can be replaced by a lambda function
+# isEven = lambda n : n % 2 == 0
+
+# # filtering
+# result  = filter (isEven, numbers)
+
+# you can also declare the lambda function directly as an argument of the filter function
+result = filter (lambda n : n % 2 == 0, numbers)
+
+# printing the result
+print(f"Filtered list{list(result)}")
+
+# importing the functools package
+from functools import reduce
+
+expenses = [
+    ('Dinner', 80),
+    ('Car repair', 120)
+]
+
+# long way to finding the total expenses 
+# sum = 0
+# for expense in expenses: 
+#     sum += expense[1]
+
+# using reduce function
+sum = reduce(lambda a, b: a[1] + b [1], expenses)
+# printing the results
+print(f"Sum of expenses is {sum}")

@@ -1160,3 +1160,83 @@ lambda functions cannot be invoked directly but you can assign them to a variabl
     print(multiply(2, 4))
 
 lambda functions can be very useful when used with map, filter and reduce functions
+
+## Map, Filter, and Reduce
+
+Python provides three useful global functions that can be used with collections.
+
+### map():
+Map is a function that is used to run on each item in an iterable variable like a list and create a new list with the same number of items where the values of each item can be changed. 
+
+You can understand better from the example given below, 
+
+#### Syntax:
+    # list
+    numbers = [1, 2, 3]
+
+    # this can be a lambda function
+    def double(a):
+        return a * 2
+
+    double = lambda a : a * 2
+
+    # this will iterate through each item in the list and create a new list
+    result = map(double, numbers)
+
+    # printing the result
+    print(list(result))
+
+### filter():
+It takes an takes an iterable and returns a filter object, which is also an iteratble but with only some of the the original items. You can do so by returning True or False from the filtering function. 
+
+An example is given below, 
+
+#### Syntax:
+    # list 
+    numbers = [1, 2, 3]
+
+    # function that returns True or False
+    def isEven(n):
+        return n % 2 == 0
+
+    # filtering
+    result  = filter (isEven, numbers)
+
+    # you can also declare the lambda function directly as an argument of the filter function
+    result = filter (lambda n : n % 2 == 0, numbers)
+
+    # printing the result
+    print(list(result))
+
+### reduce():
+It is used to calculate a value out of a sequence like a list.
+
+An example is given below.
+expenses is a list of tuples containing the details of the expenses. You need to calculate the total expenses. The long way of calculating the expenses from a list of tuples would be to use a loop and iterate through each element of the list and to find the sum. 
+
+Using reduce it can be simplified as given below,
+
+
+#### Syntax:
+    # importing reduce
+    from functools import reduce
+
+    expenses = [
+        ('Dinner', 80),
+        ('Car repair', 120)
+    ]
+
+    # long way to finding the total expenses 
+    sum = 0
+    for expense in expenses: 
+        sum += expense[1]
+
+
+    #using reduce function
+    sum = reduce(lambda a, b: a[1] + b[1], expenses)
+
+    print(f"Sum of expenses is {sum}")
+
+
+#### Note:
+To use the reduce() function you need to import the functools package.
