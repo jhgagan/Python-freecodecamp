@@ -632,3 +632,41 @@ expenses = [
 sum = reduce(lambda a, b: a[1] + b [1], expenses)
 # printing the results
 print(f"Sum of expenses is {sum}")
+
+# Recursion
+# definition of the function
+def factorial(n):
+    if n == 1: 
+        return 1
+    return n * factorial(n-1)
+
+# printing the factorial of 3
+print(f"Factorial of 3:{factorial(3)}")
+print(f"Factorial of 4:{factorial(4)}")
+print(f"Factorial of 5:{factorial(5)}")
+
+# Decorator
+def logtime(func):
+    def wrapper():
+        # do something before
+        print("before")
+        val = func()
+        # do somthing after
+        print("after")
+        return val
+    return wrapper
+
+# now the logtime decorator is assgined to the function hello
+@logtime
+def hello():
+    print("Hello")
+
+hello()
+
+# Docstring
+def increment(n):
+    # The Docstring is found below
+    """Increment a number"""
+    return n + 1
+
+print(help(increment))

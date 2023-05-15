@@ -1240,3 +1240,61 @@ Using reduce it can be simplified as given below,
 
 #### Note:
 To use the reduce() function you need to import the functools package.
+
+## Recursion:
+
+A function in python can call itself. This is called recusion. The best example case for the use of recursion is Factorial.
+
+#### Syntax:
+    # definition of the function
+    def factorial(n):
+        if n == 1: 
+            return 1
+        return n * factorial(n-1)
+
+    # printing the factorial of 3
+    print(factorial(3))
+
+
+#### Note:
+By default python stop recursion at 1000 calls.
+
+## Decorators:
+This is a way to change or enhance in any way how a function words. Decorators are defined with the decorator name just before the function definition. 
+
+An example is given below, 
+#### Syntax:
+    def logtime(func):
+        def wrapper():
+            # do something before
+            print("before")
+            val = func()
+            # do somthing after
+            print("after")
+            return val
+        return wrapper
+
+    # now the logtime decorator is assgined to the function hello
+    @logtime
+    def hello():
+        print("Hello")
+
+    hello()
+
+So when ever we call the hello() function the decorator will also be called. A decorator is a function that takes a function as a parameter, wraps the function in an inner function that performs the job it has to do and returns that inner function.
+
+you use decorator when you want to change the behaviour of a function without modifying the function itself. For example when you are logging, testing the performace etc, you can use this. 
+
+## Docstrings:
+
+Documentation is very important to understand the code either written by you or by someone else.  documentation can be written either with comments or with docstring. 
+
+Example of a docstring is given below, 
+#### Syntax:
+    def increment(n):
+        """Increment a number"""
+        return n + 1
+
+    print(help(increment))
+
+Docsting can be multiple lines. It is also common to have a docstring at the beginning of the file explaining what the program does. You can use the help() global function to print the docstings. The help() function ignores the comments but prints the docstring. 
