@@ -1298,3 +1298,5 @@ Example of a docstring is given below,
     print(help(increment))
 
 Docsting can be multiple lines. It is also common to have a docstring at the beginning of the file explaining what the program does. You can use the help() global function to print the docstings. The help() function ignores the comments but prints the docstring. 
+
+Docstrings help in automated creation of documentation. 
