@@ -670,3 +670,46 @@ def increment(n):
     return n + 1
 
 print(help(increment))
+
+# Annotations
+""" This function accepts only an int value and also returns only an int value. This is achieved using the annotations"""
+# we want to make this function accept only an int value
+def increment(n: int) -> int: 
+# this specifies that this function recieves an int and also returns an int
+    return n + 1
+
+# # a variable of integer type
+# count: int = 0
+
+# result = 2 / 0
+# print(result)
+
+# # this will raise a zero division error
+
+# let's use a try and except block to overcome the error in the previous code snippet
+
+try:
+    result = 2 / 0 
+except ZeroDivisionError:
+    print('Cannot divide by zero!')
+finally:
+    result = 1
+
+print(f"result:{result}")
+
+# # raise an exception
+# raise Exception('An error!')
+
+try:
+    raise Exception('An error!')
+except Exception as error:
+    print(error)
+
+class DogNotFoundException(Exception):
+    print("inside the DogNotFoundException  class")
+    pass # this means nothing
+
+try:
+    raise DogNotFoundException()
+except DogNotFoundException:
+    print('Dog not found!')

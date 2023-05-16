@@ -1300,3 +1300,93 @@ Example of a docstring is given below,
 Docsting can be multiple lines. It is also common to have a docstring at the beginning of the file explaining what the program does. You can use the help() global function to print the docstings. The help() function ignores the comments but prints the docstring. 
 
 Docstrings help in automated creation of documentation. 
+
+
+## Annotations
+Python is dynamically typed, so we do not have to specify the type of the varibale, or function parameter or a function return value. Annotations allows us to specify the type of the vairable, function parameter or function return value.
+
+#### Syntax:
+    """ This function accepts only an int value and also returns only an int value. This is achieved using the annotations"""
+    # we want to make this function accept only an int value
+    def increment(n: int) -> int: 
+    # this specifies that this function recieves an int and also returns an int
+        return n + 1
+
+    # a variable of integer type
+    count: int = 0
+
+Python will actually ignore this annotations, a separate tool myPy can be run standalone integrated by IDEs to automatically check for type errors statically. It will also check for type mismatch bugs before even running the code. 
+
+This helps when the program become large and you have to handle the errors.
+
+## Exception handling:
+It is important to have a way to handle error, Python allows us to handle errors using the try and except blocks. 
+
+#### Syntax:
+    # You wrap the code the raises exceptions in try block and add the code that needs to be run in case of an exception in the except block. 
+    try:
+        # some lines of code
+    except <ERROR1>: # checkffor a specific error
+        # handler <ERROR1>
+    except <ERROR2>: # check for a specific error
+        # handler <ERROR2>
+    except: # handles all the exception
+        # handler
+    else: # if no errors was found
+        # no exceptions were raised, the code ran successfully
+    finally: 
+        # do something in any case
+
+An example of error handling is given below, 
+
+#### Synatx:
+    result = 2 / 0
+    # this line and below will not run cuz the previous line raised an error
+    print(result)
+
+    # this will raise a zero division error
+
+#### Syntax:
+    # let's use a try and except block to overcome the error in the previous code snippet
+
+    try:
+        result = 2 / 0 
+    except ZeroDivisionError: # check for zero division error
+        print('Cannot divide by zero!')
+    finally:
+        result = 1
+    
+    print(result)
+
+You can also raise exception in your own code. The syntax to do so is given below,
+
+#### Syntax:
+    # raise an exception
+    raise Exception('An error!')
+
+The above code snippet raises a general error. So, that will stop the exceution of the code. If you want to raise an exception without stopping the code then you can use the try and except block.
+
+If you want to raise a specific error. An example to raise a specific error is given below, 
+
+#### Syntax:
+    try:
+        raise Exception('An error!')
+    except Exception as error:
+        print(error)
+
+You can also define your own exception class extending from exception. 
+
+You can find the code snippet to do that below,
+
+#### Syntax:
+    class DogNotFoundException(Exception):
+    print("inside")
+        pass # this means nothing
+
+    try:
+        raise DogNotFoundException()
+    except DogNotFoundException:
+        print('Dog not found!')
+
+#### Note:
+you use the "pass" command when creating a class without a methods or a funcion without code. 
