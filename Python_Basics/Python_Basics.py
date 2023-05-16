@@ -726,7 +726,7 @@ finally:
     file.close()
 
 # file path
-filename = 'E:\Learning\Python_freecodecamp\Python_Basics\test.txt'
+filename = 'E:/Learning/Python_freecodecamp/Python_Basics/test.txt'
 
 with open(filename, 'r') as file:
     content = file.read()

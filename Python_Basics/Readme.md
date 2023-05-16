@@ -1399,7 +1399,7 @@ An example code without the With statement is given below,
 #### Syntax:
 
     # file path
-    filename = 'E:\Learning\Python_freecodecamp\Python_Basics\test.txt'
+    filename = 'E:/Learning/Python_freecodecamp/Python_Basics/test.txt'
     
     try:
         file = open(filename, 'r')
@@ -1409,9 +1409,10 @@ An example code without the With statement is given below,
         file.close()
 
 An alternative method to do this using the With statement is given below. Note that while using the file with the "With" command you do not have to manually close the file. We have built in exception handling as close will be automatically called.
+
 #### Syntax:
     # file path
-    filename = 'E:\Learning\Python_freecodecamp\Python_Basics\test.txt'
+    filename = 'E:/Learning/Python_freecodecamp/Python_Basics/test.txt'
 
     with open(filename, 'r') as file:
         content = file.read()
