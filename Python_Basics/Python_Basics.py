@@ -713,3 +713,21 @@ try:
     raise DogNotFoundException()
 except DogNotFoundException:
     print('Dog not found!')
+
+# With
+# the path to the test.txt file
+filename = 'E:/Learning/Python_freecodecamp/Python_Basics/test.txt'
+
+try:
+    file = open(filename, 'r')
+    content = file.read()
+    print(content)
+finally:
+    file.close()
+
+# file path
+filename = 'E:\Learning\Python_freecodecamp\Python_Basics\test.txt'
+
+with open(filename, 'r') as file:
+    content = file.read()
+    print(content)

@@ -1390,3 +1390,29 @@ You can find the code snippet to do that below,
 
 #### Note:
 you use the "pass" command when creating a class without a methods or a funcion without code. 
+
+## With:
+With is very helpful to simplify working with exception handling. For example, while working with files, each time we open a file we must remember to close it. With makes the process more transparent. 
+
+An example code without the With statement is given below, 
+
+#### Syntax:
+
+    # file path
+    filename = 'E:\Learning\Python_freecodecamp\Python_Basics\test.txt'
+    
+    try:
+        file = open(filename, 'r')
+        content = file.read()
+        print(content)
+    finally:
+        file.close()
+
+An alternative method to do this using the With statement is given below. Note that while using the file with the "With" command you do not have to manually close the file. We have built in exception handling as close will be automatically called.
+#### Syntax:
+    # file path
+    filename = 'E:\Learning\Python_freecodecamp\Python_Basics\test.txt'
+
+    with open(filename, 'r') as file:
+        content = file.read()
+        print(content)  
