@@ -731,3 +731,26 @@ filename = 'E:/Learning/Python_freecodecamp/Python_Basics/test.txt'
 with open(filename, 'r') as file:
     content = file.read()
     print(content)
+
+# conventional list
+numbers = [1, 2, 3, 4, 5]
+
+# list compression
+numbers_power_2 = [n**2 for n in numbers]
+
+# prinitng the elements of the numbers_power_2
+print(numbers_power_2)
+
+# Operator Overloading
+class Dog:
+    # the Dog class
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __gt__(self, other): # __gt__ is equivalent to >
+        return True if self.age > other.age else False
+roger = Dog('Roger', 8)
+syd = Dog('Syd', 7)
+
+print(roger > syd)

@@ -1397,7 +1397,6 @@ With is very helpful to simplify working with exception handling. For example, w
 An example code without the With statement is given below, 
 
 #### Syntax:
-
     # file path
     filename = 'E:/Learning/Python_freecodecamp/Python_Basics/test.txt'
     
@@ -1417,3 +1416,86 @@ An alternative method to do this using the With statement is given below. Note t
     with open(filename, 'r') as file:
         content = file.read()
         print(content)  
+
+## pip:
+
+"pip" is used to install third party packages in python. "pip" stands for preffered installed program. You can find almost all of the open-source packages from pypi.org. 
+
+An example of how to install a package using pip is given below,
+#### Syntax:
+    pip install requests
+
+    # the format is 
+    pip install <package_name>
+
+    # updating the existing package
+    pip intall -U <package_name>
+
+    #uninstalling a package
+    pip uninstall <package_name>
+
+    # information about the package
+    pip show <package_name>
+
+## List Compressions:
+
+This is a way to create lists in a very consice way. An example is given below.
+
+#### Syntax:
+    # conventional list
+    numbers = [1, 2, 3, 4, 5]
+
+    # list compression
+    numbers_power_2 = [n**2 for n in numbers]
+
+    # prinitng the elements of the numbers_power_2
+    print(numbers_power_2)
+
+    # list compression equivalent operation
+    numbers_power_2 = []
+    for n in numbers:
+        numbers_power_2.append(n**2)
+
+List compression is sometimes preffered over loops as it make the code more readable and concise.
+
+## Polymorphism:
+
+In object-oriented programming, polymorphism (from the Greek meaning "having multiple forms") is the characteristic of being able to assign a different meaning or usage to something in different context - specifically, to allow an entity such as a variable, a function, or an object to have more than one form.
+
+# Operator Overloading:
+
+Operator overloading is a way for a single operator (method/function) to perform several operation based on the class (type) of operands(arguments).
+
+An example is given below,
+
+#### Syntax:
+    class Dog:
+        # the Dog class
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+        def __gt__(self, other): # __gt__ is equivalent to >
+            return True if self.age > other.age else False
+    roger = Dog('Roger', 8)
+    syd = Dog('Syd', 7)
+
+    print(roger > syd)
+
+The list of some of the operator and their equivalent method name is given below, 
+- __add__() responds to the + operator
+- __sub__() responds to the - operator
+- __mul__() responds to the * operator
+- __truediv__() responds to the / operator
+- __floordiv__() responds to the // operator
+- __mod__() responds to the % operator
+- __pow__() responds to the ** operator
+- __rshit__() responds to the >> operator
+- __lshit__() responds to the << operator
+- __and__() responds to the & operator
+- __or__() responds to the | operator
+- __xor__() responds to the ^ operator
+
+This is the end of the basics of Python. Next in the video is about a simple python implementation of a blackjack game. The details of that can be found in the Blackjack folder.
+
+Thank you
