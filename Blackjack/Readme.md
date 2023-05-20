@@ -128,3 +128,49 @@ Now, we will refactor the previous code to get the value of each rank without us
         {"rank": "K", "value" : 10},
         {"rank": "Q", "value" : 10},
         ]
+
+Now, we create class to make the code more readable. We will be using class to model 3 parts of the game, namely, a card, a deck and a hand. 
+
+So now we make a class in the beginning and put everything to that class.
+
+Now, we create an instance of the deck class.
+
+#### Syntax:
+    class Deck:  
+        def __init__(self):         
+            # the variables of the class deck
+            self.cards = []
+            suits = ["clubs", "spades", "hearts", "diamonds"]
+            ranks = [
+                {"rank": "A", "value" : 11},
+                {"rank": "2", "value" : 2},
+                {"rank": "3", "value" : 3},
+                {"rank": "4", "value" : 4},
+                {"rank": "5", "value" : 5},
+                {"rank": "6", "value" : 6},
+                {"rank": "7", "value" : 7},
+                {"rank": "8", "value" : 8},
+                {"rank": "9", "value" : 9},
+                {"rank": "10", "value" : 10},
+                {"rank": "J", "value" : 10},
+                {"rank": "K", "value" : 10},
+                {"rank": "Q", "value" : 10},
+                ]
+            
+            # for loop to update the cards list with all possible combinations ranks and suits
+            for suit in suits:
+                for rank in ranks:
+                    self.cards.append([suit, rank])
+
+        # Shuffle function
+        def shuffle(self):
+            random.shuffle(self.cards)
+            return
+
+        # dealing cards
+        def deal(self, number):
+            cards_dealt = []
+            for x in range(number):
+                card = self.cards.pop()
+                cards_dealt.append(card) 
+            return cards_dealt
