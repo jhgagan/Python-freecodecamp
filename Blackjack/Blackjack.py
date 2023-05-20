@@ -17,8 +17,21 @@ def deal(number):
  # the variables
 cards = []
 suits = ["clubs", "spades", "hearts", "diamonds"]
-ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q" , "K"]
-# suit = suits[2]
+ranks = [
+    {"rank": "A", "value" : 11},
+    {"rank": "2", "value" : 2},
+    {"rank": "3", "value" : 3},
+    {"rank": "4", "value" : 4},
+    {"rank": "5", "value" : 5},
+    {"rank": "6", "value" : 6},
+    {"rank": "7", "value" : 7},
+    {"rank": "8", "value" : 8},
+    {"rank": "9", "value" : 9},
+    {"rank": "10", "value" : 10},
+    {"rank": "J", "value" : 10},
+    {"rank": "K", "value" : 10},
+    {"rank": "Q", "value" : 10},
+    ]# suit = suits[2]
 # rank = 'K'
 # value = 10
 
@@ -41,12 +54,35 @@ for suit in suits:
 
 # shuffle the cards using the shuffle method of the random module
 shuffle()
+card = deal(1)[0]
 
-# # printing the cards to check if they have been shuffled
-# print(cards)
+# printing the card
+print(card[0], card[1]["value"])
+# # # printing the cards to check if they have been shuffled
+# # print(cards)
 
-# deal a card from the deck and store it in a variable
-cards_dealt = deal(2)
-card = cards_dealt[0]
-# print the card
-print(card)
+# # deal a card from the deck and store it in a variable
+# cards_dealt = deal(2)
+# card = cards_dealt[0]
+# # print the card
+# print(card)
+
+# # storing the rank of the card
+# rank = card[1]
+
+# # printing the rank of the card 
+# print(f"Rank:{rank}")
+
+# if(rank == 'A'):
+#     value = 11
+# elif(rank == 'J' or rank == 'Q' or rank == 'K'):
+#     value = 10
+# else:
+#     value = rank
+
+# # dictionary of rank and value
+# rank_dict = {"rank":rank, "value":value}
+
+# # prinitng the contents of the rank_dict
+# print(rank_dict["rank"], rank_dict["value"])
+
