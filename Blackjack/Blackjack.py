@@ -2,6 +2,15 @@
 # import the necessary library
 import random
   
+# Card Class
+class Card:
+    def __init__(self, suit, rank ):
+        self.suit = suit
+        self.rank = rank
+
+    def __str__(self):
+        return f'{self.rank["rank"]} of {self.suit}'
+
 # create a class deck to hold the 3 parts of the game, i.e., a card, a deck and a hand
 class Deck:  
     def __init__(self):         
@@ -21,13 +30,14 @@ class Deck:
             {"rank": "10", "value" : 10},
             {"rank": "J", "value" : 10},
             {"rank": "K", "value" : 10},
-            {"rank": "Q", "value" : 10},
+            {"rank": "Q", "value" : 10}
             ]
         
         # for loop to update the cards list with all possible combinations ranks and suits
         for suit in suits:
             for rank in ranks:
-                self.cards.append([suit, rank])
+                # here we are appending an object of Card class
+                self.cards.append(Card(suit, rank))
 
     # Shuffle function
     def shuffle(self):
@@ -53,3 +63,6 @@ deck2.shuffle()
 print(deck1.cards)
 # print the cards of deck2
 print(deck2.cards)
+
+card1 = Card("hearts", {"rank": "A", "value" : 11})
+print(card1)

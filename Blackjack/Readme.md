@@ -126,8 +126,10 @@ Now, we will refactor the previous code to get the value of each rank without us
         {"rank": "10", "value" : 10},
         {"rank": "J", "value" : 10},
         {"rank": "K", "value" : 10},
-        {"rank": "Q", "value" : 10},
+        {"rank": "Q", "value" : 10}
         ]
+
+## Deck Class
 
 Now, we create class to make the code more readable. We will be using class to model 3 parts of the game, namely, a card, a deck and a hand. 
 
@@ -154,7 +156,7 @@ Now, we create an instance of the deck class.
                 {"rank": "10", "value" : 10},
                 {"rank": "J", "value" : 10},
                 {"rank": "K", "value" : 10},
-                {"rank": "Q", "value" : 10},
+                {"rank": "Q", "value" : 10}
                 ]
             
             # for loop to update the cards list with all possible combinations ranks and suits
@@ -174,3 +176,60 @@ Now, we create an instance of the deck class.
                 card = self.cards.pop()
                 cards_dealt.append(card) 
             return cards_dealt
+
+## Card Class
+
+Since a card is  separate concept from a deck, let's make a new card class that will capture the idea of the card. Let's construct a Class with a constructor that will assign the suit to "heart" and rank to "A". 
+
+Now let's refactor the constructor of the Card class to take suit and rank and assign it to the memeber variables.
+
+#### Syntax:
+    class Card:
+        def __init__(self, suit = "Heart", rank = "A"):
+            self.suit = suit
+            self.rank = rank
+
+### __str__(self):
+
+When a class has this method. It is called when a print is invoked by an object of this class. So we want a particular format.
+
+#### Syntax:
+    class Card:
+        def __init__(self, suit = "Heart", rank = "A"):
+            self.suit = suit
+            self.rank = rank
+
+        def __str__(self):
+            return f"{self.rank["rank"]}  of {self.suit}"
+
+Now we will change the constructor of Deck class to use an object of card class.
+
+The chaged constructor syntax is as given below, 
+
+#### Syntax:
+    # constructor of the Deck class.
+    def __init__(self):         
+        # the variables of the class deck
+        self.cards = []
+        suits = ["clubs", "spades", "hearts", "diamonds"]
+        ranks = [
+            {"rank": "A", "value" : 11},
+            {"rank": "2", "value" : 2},
+            {"rank": "3", "value" : 3},
+            {"rank": "4", "value" : 4},
+            {"rank": "5", "value" : 5},
+            {"rank": "6", "value" : 6},
+            {"rank": "7", "value" : 7},
+            {"rank": "8", "value" : 8},
+            {"rank": "9", "value" : 9},
+            {"rank": "10", "value" : 10},
+            {"rank": "J", "value" : 10},
+            {"rank": "K", "value" : 10},
+            {"rank": "Q", "value" : 10}
+            ]
+        
+        # for loop to update the cards list with all possible combinations ranks and suits
+        for suit in suits:
+            for rank in ranks:
+                # here we are appending an object of Card class
+                self.cards.append(Card(suit, rank))
