@@ -1,7 +1,7 @@
 '''In this file we will be trying to implement the Blackjack game.'''
 # import the necessary library
 import random
-  
+
 # Card Class
 class Card:
     def __init__(self, suit, rank ):
@@ -52,17 +52,24 @@ class Deck:
             cards_dealt.append(card) 
         return cards_dealt
 
-# creating the instance of the deck class 
-deck1 = Deck()
-deck2 = Deck()
+# Hand class
+class Hand:
+    def __init__(self, dealer = False):
+        self.cards = []
+        self.value = 0
+        self.dealer = dealer
 
-#shuffling deck2
-deck2.shuffle()
+    def add_card(self, card_list):
+        self.cards.extend(card_list)
 
-# now we print the cards of the deck1 instance
-print(deck1.cards)
-# print the cards of deck2
-print(deck2.cards)
+# creating a deck of cards
+deck = Deck()
+# shuffle the deck of cards
+deck.shuffle()
 
-card1 = Card("hearts", {"rank": "A", "value" : 11})
-print(card1)
+# create a hand object
+hand = Hand()
+# add 2 cards from the shuffled deck 
+hand.add_card(deck.deal(2))
+# print to check if the cards have been added to the hand.card variable
+print(hand.cards[0], hand.cards[1])

@@ -233,3 +233,38 @@ The chaged constructor syntax is as given below,
             for rank in ranks:
                 # here we are appending an object of Card class
                 self.cards.append(Card(suit, rank))
+
+## Hand class:
+
+This will represent a hand in the game. 
+
+Now, we create a hand class with an constructor and then we initialse a variable card that is set to an empty list. 
+
+In this game we will have a human controlled player and a program controlled dealer. So, let us a dealer parameter in the init constructor of the hand and when a hand object is created the dealer is set to true, else it is falsemethod in the hand class that will be
+
+Now, let us add an add card method. The method should take a list as a parameter. 
+
+#### Syntax:
+    class hand:
+        def __init__(self, dealer):
+            self.cards = []
+            self.value  = 0
+            dealer = True
+        
+        def add_card(self, card_list):
+            self.cards.extend(card_list)
+
+Now to test if the above code is working we use the code below, 
+
+#### Syntax:
+    # creating a deck of cards
+    deck = Deck()
+    # shuffle the deck of cards
+    deck.shuffle()
+
+    # create a hand object
+    hand = Hand()
+    # add 2 cards from the shuffled deck 
+    hand.add_card(deck.deal(2))
+    # print to check if the cards have been added to the hand.card variable
+    print(hand.cards[0], hand.cards[1])
