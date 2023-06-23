@@ -62,6 +62,32 @@ class Hand:
     def add_card(self, card_list):
         self.cards.extend(card_list)
 
+    def calculate_value(self):
+        self.value = 0
+        #since has_ace is a local variable we don't need to use "self."
+        has_ace = False
+
+        for card in self.cards:
+            # getting the card value and making sure the value is an integer
+            card_value = int(card.rank["value"])
+            # adding the value of the card 
+            self.value+=card_value
+            # checking if the rank is ace
+            if card.rank["rank"] == "A":
+                has_ace = True
+            
+        #checking if the total value is greater than 21
+        if self.value > 21 and has_ace:
+            # reasigning the value of ace to 1 from 11
+            self.value-=10
+
+    def get_value(self):
+        self.calculate_value()
+        return self.value
+
+    def is_blackjack(self):
+        return self.get_value() == 21
+
 # creating a deck of cards
 deck = Deck()
 # shuffle the deck of cards
@@ -73,3 +99,5 @@ hand = Hand()
 hand.add_card(deck.deal(2))
 # print to check if the cards have been added to the hand.card variable
 print(hand.cards[0], hand.cards[1])
+
+print(f"value {hand.get_value()}")

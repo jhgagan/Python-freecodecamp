@@ -268,3 +268,31 @@ Now to test if the above code is working we use the code below,
     hand.add_card(deck.deal(2))
     # print to check if the cards have been added to the hand.card variable
     print(hand.cards[0], hand.cards[1])
+
+Now, we will add the ability to calculate the value of a hand. Let's create method called  calculate_value, and in the method we will set the value to 0 initially.
+
+Now, let's loop through the cards and calculate the value in hand by adding the values to the self.value variable.
+
+The value of Ace can either be 1 or 11 based on the situation. So, to tackle this situation first we need to check if the hand has a Ace.
+
+If the hand has ace then we check if the total value is greater than 21, if it is greater than 21 we subtract 10 from it.
+
+#### Syntax:
+    def calculate_value(self):
+        self.value = 0
+        #since has_ace is a local variable we don't need to use "self."
+        has_ace = False
+
+        for card in self.cards:
+            # getting the card value and making sure the value is an integer
+            card_value = int(card.rank["value"])
+            # adding the value of the card 
+            self.value+=card_value
+            # checking if the rank is ace
+        if card.rank["rank"] == "A":
+            has_ace = True
+            
+        #checking if the total value is greater than 21
+        if self.value > 21 and has_ace:
+            # reasigning the value of ace to 1 from 11
+            self.value-=10
