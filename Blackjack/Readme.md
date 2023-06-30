@@ -277,6 +277,10 @@ The value of Ace can either be 1 or 11 based on the situation. So, to tackle thi
 
 If the hand has ace then we check if the total value is greater than 21, if it is greater than 21 we subtract 10 from it.
 
+We will also create a method, get_value(), to return the value of the cards in hand.
+
+The is_blackjack() method checks if the total value in hand is equal to 21.
+
 #### Syntax:
     def calculate_value(self):
         self.value = 0
@@ -296,3 +300,10 @@ If the hand has ace then we check if the total value is greater than 21, if it i
         if self.value > 21 and has_ace:
             # reasigning the value of ace to 1 from 11
             self.value-=10
+            
+    def get_value(self):
+        self.calculate_value()
+        return self.value
+
+    def is_blackjack(self):
+        return self.get_value() == 21
