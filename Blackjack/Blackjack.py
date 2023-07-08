@@ -87,6 +87,25 @@ class Hand:
 
     def is_blackjack(self):
         return self.get_value() == 21
+    
+    def display(self, show_all_dealer_Card = False):
+        # this will print "Dealer's hand" or "Your hand" based on what self is
+        print(f'''{"Dealer's " if self.dealer else "Your "}hand:''')
+        # A for loop to print out all the cards
+        for index, card in enumerate(self.cards):
+            # the back slash means that the syntax is continued in the next line
+            if index == 0 and self.dealer \
+            and not show_all_dealer_Card and not self.is_blackjack:
+                print("Hidden")
+            else:
+                print(card)
+            
+        # if not the dealer then we need to print the value of the hand
+        if not self.dealer:
+            print(f"Value: {self.get_value()}")
+        # To print a blank line
+        print()
+
 
 # creating a deck of cards
 deck = Deck()
@@ -98,6 +117,6 @@ hand = Hand()
 # add 2 cards from the shuffled deck 
 hand.add_card(deck.deal(2))
 # print to check if the cards have been added to the hand.card variable
-print(hand.cards[0], hand.cards[1])
-
-print(f"value {hand.get_value()}")
+#print(hand.cards[0], hand.cards[1])
+#print(f"value {hand.get_value()}")
+hand.display()

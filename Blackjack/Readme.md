@@ -281,6 +281,8 @@ We will also create a method, get_value(), to return the value of the cards in h
 
 The is_blackjack() method checks if the total value in hand is equal to 21.
 
+The display(self) method displays the dealer's and the player hand.
+
 #### Syntax:
     def calculate_value(self):
         self.value = 0
@@ -307,3 +309,34 @@ The is_blackjack() method checks if the total value in hand is equal to 21.
 
     def is_blackjack(self):
         return self.get_value() == 21
+
+    def display(self):
+        # this will print "Dealer's hand" or "Your hand" based on what self is
+        print(f'''{"Dealer's" if self.dealer else "Your"}hand:''')
+        # A for loop to print out all the cards
+        for card in self.cards:
+            print(card)
+
+        # if not the dealer then we need to print the value of the hand
+        if not self.dealer:
+            print(f"Value: {self.get_value()}")
+        # To print a blank line
+        print()
+
+When you are playing blackjack you don't get to see everyone else's card. So, when the dealer's cards are printed during the game, only the seond one should display. The first one should display as hidden. 
+
+In out game, at the end all the card in the dealer's hand will be displayed. So, let us introduce a new parameter for the display method. The display method with these changes is given below,
+
+#### Syntax:
+    def display(self, show_all_dealer_Card = False):
+        # this will print "Dealer's hand" or "Your hand" based on what self is
+        print(f'''{"Dealer's " if self.dealer else "Your "}hand:''')
+        # A for loop to print out all the cards
+        for index, card in enumerate(self.cards):
+            # the back slash means that the syntax is continued in the next line
+            if index == 0 and self.dealer \
+            and not show_all_dealer_Card and not self.is_blackjack:
+                print("Hidden")
+            else:
+                print(card)
+
