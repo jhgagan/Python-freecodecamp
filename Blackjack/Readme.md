@@ -340,3 +340,80 @@ In out game, at the end all the card in the dealer's hand will be displayed. So,
             else:
                 print(card)
 
+## Game class:
+
+This will the final and the longest class of the game. This class will be called game.
+
+The game class will have a method called play. The play method will have variables "game_number" and "games_to_play". Both the variables initialized to 0.
+
+Now, we will ask the user/player how many games he/she wishes to play. 
+
+Now, we will get an error if the user accidentally inputs a non positive non number. To resolve this let us use a try and except block. By using a simple try and except block we are only expecting the user to input the non positive non number input only once. So, let us try to implement a method where the user keeps trying to input the number until their input is valid.
+
+Now, let's create another loop that will be completed when one game is completed.
+In this loop, we first create a deck object and shuffle the deck. Then, we create an object of Hand class and call it "player_hand" object. Then, we will also create an object of Hand class called "dealer_hand".
+
+Now, we will create a for loop that will add two card to the player and dealer's hand each taken from the deck.
+
+Now, we will display the player and dealer's hand.
+
+Create a method called check winner. This method will be responsible to check if we already have a winner.
+
+
+
+#### Syntax
+
+    class Game:
+        def play(self):
+            game_number = 0
+            games_to_play = 0
+
+            # getting the input for the number of games to play
+            while games_to_play >=0:
+                try:
+                    games_to_play = int(input("How many games do you wish to play:"))
+                    input_valid = True
+                except:
+                    print("The entered number is not valid. Please try again")
+            
+            # game loop
+            while game_number < games_to_play:
+                game_number += 1 
+            
+                # deck object
+                deck = Deck()
+                deck.shuffle()
+
+                # player hand object
+                player_hand = Hand()
+
+                # dealer hand
+                dealer_hand = Hand(dealer = True)
+
+
+        def check_winner(self, player_hand, dealer_hand, game_over = False):
+            if not game_over:
+                if player_hand.get_value() > 21:
+                    print(" You busted. Dealer wins!")
+                    return True
+                elif dealer_hand.get_value() > 21:
+                    print(" Dealer busted. You win!")
+                    return True
+                elif dealer_hand.is_blackjack() and player_hand.is_blackjack():
+                    print(" Both player have a blackjack! Tie!")
+                    return True
+                elif player_hand.is_blackjack():
+                    print(" You have blackjack! You win!")
+                    return True
+                elif dealer_hand.is_blackjack():
+                    print(" Dealer has blackjack! Dealer wins!")
+                    return True
+            else:
+                if player_hand.get_value() > dealer_hand.get_value():
+                    print("You wins!")
+                elif player_hand.get_value() == dealer_hand.get_value():
+                    print("Tie!")
+                elif player_hand.get_value() < dealer_hand.get_value():
+                    print("Dealer wins!")
+                return True
+            return False
