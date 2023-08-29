@@ -30,7 +30,24 @@ Synchronous replication protocol. Local write operations on the primary node are
 Most commonly used replication protocol in DRBD setup is Protocol C.
 
 ## DRBD Architecture:
+DRBD is split into two independednt pieces: a kernel module that implements the DRBD behaviours and a set of  user-space administration applications used to manage the DRBD disks. The kernel module implements a driver for a virtual block device (Which is replicated between a locak disk anda a remote disk across the network). As a virtual disk, DRBD provides a flecible model that a variety of applications can use (from file systems to other applications that can rely on a raw disk, such as a database). The DRBD module implements an interface not only to the underlying block driver (as defined by the disk configuration item in drbd.conf) but also the networking stack (whose endpoint is defined by an IP address and port number. also in drbd.conf).
 
+## DRBD commands and related files
+
+### Commands:
+
+- DRBDadm - High level Administration tool.
+- DRBDsetup - Configures the DRBD module that was loaded into the kernel
+- DRBDmeta - Allows to create, dump, restore, and mofiy DRBD meta data structures.
+
+### Related Config Files:
+
+- /etc/drbd.conf - Config file
+- /etc/drbd.d/global_common.conf - contains the global and common sections of the DRBD configuration.
+- /etc/drbd.d/*.res - Each resource configuration file
+
+- Port number : 7788
+- Service Name: drbd
 
 Source for the information: 
 1. DRBD Linux Cluster for Data High Availability: Link - https://www.youtube.com/watch?v=AZ3LuxS9uL8
