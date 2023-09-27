@@ -209,3 +209,7 @@ Code snippet of the widget
             });
         }
     }
+
+When ever we use %_variable_name we get the value that the variable holds.
+
+
