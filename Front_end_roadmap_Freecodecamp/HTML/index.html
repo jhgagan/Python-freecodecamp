@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <!--Heading tags go from h1 all to way to h6 in decreasing order of font size-->
+        <h1>Hello World!</h1>
+        <h2>CatPhotoApp</h2>
+        <!--It is a common pactice to indent the nested elements-->
+        <main>
+            <h3>Cat Photos</h3>
+            <!--This is how you comment in HTML-->
+            <p>Click here to view more <a href="catphotos.com">cat photos.</a></p>
+
+            <!--Anchor tag is used to create hyperlinks to other html pages or other websites.-->
+            <!-- It has the attribute href (hyper reference) where you provide the link to the page you want to link to.-->
+            <!--if you set the href value to "#" then it will act as a dummy link that links to itself-->
+            <a href="#">cat photos</a>
+
+            <!--Image tag that is given below doesn't have a closing tag-->
+            <!--The src attribute of the given image tag is supposed to be the link or the loaction to the image.-->
+            <!--Note: the image might not be displayed if the page doesn't exist anymore-->
+            <!--alt attribute is used to display an alterative text for better accessibility for the page readers and for
+            case when the image doesn't load or is missing due to any reason-->
+            <img src = "https://fcc.im/fcc-relaxing-cat" alt="A cute orange cat lying on its back">
+            <h3>Cat lists</h3>
+            <p> Things cats love:</p>
+            <ul>
+                <li>cat nip</li>
+                <li>laser pointer</li>
+                <li>lasagna</li>
+            </ul>
+            
+            <!--Here we can put up an image from you local storage-->
+            <!--You should make sure that the lasagna image is present in the same path as that of the index.html-->
+            <img src="lasagna.jpg" alt="lasagna">
+
+            <!--Ordered list-->
+            <!--Ordered lists are numbered-->
+            <!--Strong tag is used to make the text within the tag bold-->
+            <p>Things cats <strong>hate</strong>:</p>
+            <ol>
+                <li>flea treatment</li>
+                <li>thunder</li>
+                <li>other cat</li>
+            </ol>
+
+            <!--Image of cats-->
+            <img src="cats.jpg" alt="four kittens">
+
+            <!--we can create a submit form that will submit all the data within that form to a url once the submit button is clicked-->
+            <form action="/submit-cat-photo">
+                <!--Input tag create differet types of fields to get the user input. Input can be text or some thing else as we can search online and find further details-->
+                <!--Setting the input tag to required will force the user to give some input. without any input the user will not be able to submit the page-->
+                <input type="text" placeholder="cat photo URL" required>
+                <button type="submit">Submit</button>
+                <!--We can also create radio buttons but if we want the radio buttons to work even when you click on it's text then we need to enclose them in a label tag-->
+                <!--If we want the user to be able to select only one of the two radio buttons then we need to group the two rzadio buttons, this is done using the name attribute.
+                we have to give the same name attribute to the group of radio buttons-->
+                <label><input type="radio" name="indoor-outdoor">indoor</label>
+                <label><input type="radio" name="indoor-outdoor">outdoor</label> 
+            </form>
+
+        </main>
+    </body>
+</html>
