@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:inventory_management/pages/logged_in.dart';
+import 'package:inventory_management/components/ui_textfield.dart';
+import 'package:inventory_management/components/ui_mybutton.dart';
+
+
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+
+  // text editing controller
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,36 +41,75 @@ class LoginPage extends StatelessWidget {
       ),
 
       // login area
-      body: const SafeArea(
+      body: SafeArea(
         child:Center(
           child: Column(
 
           children: [
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
 
             // logo
-            Icon(Icons.lock,
+            const Icon(Icons.lock,
             size: 100,
             color: Colors.white,
             ),
             
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             
             // Welcome back
-            Text('Welcome Back',
+            const Text('Welcome Back',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24
               ),
             ),
+            
+            const SizedBox(height: 25),
+
             // username textfield
+            TextFieldUI(
+              controller: usernameController,
+              hintText: 'Email Address',
+              obscureText: false,
+              ),
 
+            const SizedBox(height: 10),
             // password textfield
+            TextFieldUI(
+              controller: passwordController,
+              hintText: 'Password',
+              obscureText: true,
+              ),
 
+            const SizedBox(height: 10),
             // forgot password?
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      splashFactory: NoSplash.splashFactory,
+                      foregroundColor:Colors.white,
+                      backgroundColor: Colors.black,
+                    ),
+                    child: const Text('Forgot Your Password?'),
+                  )
+                ],
+              ), 
+            ),
+
+            const SizedBox(height: 25),
 
             // sign in button
-
+            MyButton(nextPage: const LoggedInPage(), 
+            buttonText: 'SIGN IN', 
+            fgColor: Colors.black,
+            fgColorPressed: Colors.grey.shade800,
+            bgColor: Colors.white,
+            bgColorPressed: Colors.grey.shade400,)
             // or continue with 
 
             // google + apple + microsoft sign in buttons
@@ -75,46 +123,3 @@ class LoginPage extends StatelessWidget {
 }
 
 
-/*
-class SignInForm extends StatelessWidget {
-  const SignInForm({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextField(
-              decoration: const InputDecoration(
-                filled: true,
-
-                fillColor: Colors.white,
-                border: OutlineInputBorder(),
-                hintText: 'Email Address',
-              ),
-            ),
-          ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextFormField(
-            decoration: const InputDecoration(
-              filled: true,
-
-              fillColor: Colors.white,
-              border: UnderlineInputBorder(),
-              labelText: 'Password',
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-          child: TextButton(
-            onPressed: () {} ,
-            child: Text('Forgot Your Password?', style: TextStyle(fontSize: 12))),
-        ),
-      ],
-    );
-  }
-}*/

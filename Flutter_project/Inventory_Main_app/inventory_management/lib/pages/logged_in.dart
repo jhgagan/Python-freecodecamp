@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class IntroPage2 extends StatelessWidget {
-  const IntroPage2({super.key});
+class LoggedInPage extends StatelessWidget {
+  const LoggedInPage({super.key});
 
 
   @override

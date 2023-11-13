@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:inventory_management/pages/intro_page_1.dart';
 import 'package:inventory_management/pages/intro_page_2.dart';
 import 'package:inventory_management/pages/login_page.dart';
+import 'package:inventory_management/components/ui_mybutton.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 
 // ignore: camel_case_types
 class onBoardingScreen extends StatefulWidget {
@@ -26,7 +28,7 @@ class _OnBoardingScreenState extends State<onBoardingScreen> {
         children: [
            PageView(
             controller: _controller,
-            children: [
+            children: const [
               IntroPage1(),
               IntroPage2(),
             ],
@@ -43,46 +45,15 @@ class _OnBoardingScreenState extends State<onBoardingScreen> {
          ),
 
         // GET STARTED button
-         Container(
-          alignment: const Alignment(0,0.85),
-          child: SizedBox(
-            height: 50,
-            width: 200,
-            child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
-              );
-            },
-            style: ButtonStyle(
-              foregroundColor: getColor(Colors.white, Colors.black),
-              backgroundColor: getColor(Colors.black, Colors.grey),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50.0),
-                ))
-              ),
-            child: const Text('GET STARTED', style: TextStyle(fontSize: 17),)
-            )
-            ),
-          )
+        MyButton(
+          nextPage: LoginPage(),
+          buttonText: 'GET STARTED',
+          fgColor: Colors.white,
+          fgColorPressed: Colors.grey.shade800,
+          bgColor: Colors.black,
+          bgColorPressed: Colors.grey.shade400,),
         ],
       ),
     );
-  }
-
-    // Get color method
-  MaterialStateProperty<Color> getColor(Color color, Color colorPressed){
-    getColor(Set<MaterialState> states) {
-      if (states.contains(MaterialState.pressed)) {
-        return colorPressed;
-      }
-      else
-      {
-        return color;
-      }
-    }
-    return MaterialStateProperty.resolveWith(getColor);
   }
 }
