@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:inventory_management/components/ui_textfield.dart';
+import 'package:inventory_management/components/ui_mybutton.dart';
+import 'package:inventory_management/pages/rst_pswrd_successful.dart';
 
 class ResetPassword extends StatelessWidget {
   ResetPassword({super.key});
 
   final bgColor = Colors.black;
+  // Text editing controller
+  final rstPsswrdController = TextEditingController();
+  final rstPsswrdConfirmController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +41,49 @@ class ResetPassword extends StatelessWidget {
 
 
       body: SingleChildScrollView(
-        child: SafeArea(
-          child: Center(
-            child: Column(
-              children: [
-            
-            ]),
-          )
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50,),
+          child: SafeArea(
+            child: Center(
+              child: Column(
+                children: [
+
+                  const SizedBox(height: 50),
+                  
+                  const Text(
+                    'Reset Password',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      ),
+                    ),
+
+                  const SizedBox(height: 50),
+
+                  TextFieldUI(
+                    controller: rstPsswrdController,
+                    hintText: 'New Password', 
+                    obscureText: true),
+
+                  const SizedBox(height: 30),
+
+                  TextFieldUI(
+                    controller: rstPsswrdConfirmController,
+                    hintText: 'Re-enter New Password',
+                    obscureText: true),
+
+                  const SizedBox(height: 50),
+
+                  MyButton(nextPage: reset_password_successful(),
+                    buttonText: 'Reset Password', 
+                    fgColor: Colors.black,
+                    fgColorPressed: Colors.grey.shade800,
+                    bgColor: Colors.white,
+                    bgColorPressed: Colors.grey.shade400,),
+
+              ]),
+            )
+          ),
         ),
       ),
     );

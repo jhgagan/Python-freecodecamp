@@ -1,34 +1,30 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/components/square_tile.dart';
-import 'package:inventory_management/pages/forgot_password.dart';
-//import 'package:inventory_management/components/ui_button.dart';
-//import 'package:inventory_management/pages/logged_in.dart';
 import 'package:inventory_management/components/ui_textfield.dart';
 import 'package:inventory_management/services/auth_services.dart';
-//import 'package:inventory_management/components/ui_mybutton.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
 
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final Function()? onTap;
 
 
-  LoginPage({super.key, required this.onTap});
+  RegisterPage({super.key, required this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   // text editing controller
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
   final bgColor = Colors.black;
 
 
   // Sign user in method
-  void signUserIn() async {
+  void signUserUp() async {
 
     // show loading circle
     showDialog(
@@ -40,12 +36,20 @@ class _LoginPageState extends State<LoginPage> {
       }, 
     );
 
-    // try sign in
+    // try creating the user
     try{
-       await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text,
-      password: passwordController.text,
-      );
+      // check if password is confimed
+       if(passwordController.text == confirmPasswordController.text) {
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailController.text,
+          password: passwordController.text,
+        );
+       }
+       // passwords don't match
+       else {
+        // show error message, passwords don't match
+        errorMessage('Passwords don\'t match');
+       }
       // pop the loading circle
       Navigator.pop(context);
     } on FirebaseAuthException catch(e) {
@@ -54,65 +58,39 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pop(context);
       print('Error is here:'+e.code);
       if(e.code == 'INVALID_LOGIN_CREDENTIALS') {
-        invalidCredentialsMessage();
+        errorMessage('Invalid credentials, please check and try again.');
       }
       else if(e.code == 'channel-error'){
-        enterCredentialsMessage();
+        errorMessage('Enter credentials to login and try again.');
       }
       else{
-        errorMessage();
+        errorMessage('Enter credentials to login and try again.');
       }
     }
   }
 
   // wrong email message popup
 
-  void invalidCredentialsMessage() {
-    showDialog(context: context, builder: (context) {
-      return const AlertDialog(
-        backgroundColor: Colors.redAccent,
-        title: Text(
-          'Invalid credentials, please check and try again.', 
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 17,
+  void errorMessage(String message) {
+    showDialog(
+      context: context, 
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Colors.redAccent,
+          title: Center(
+            child: Text(
+              message, 
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 17,
+             ),
+            ),
           ),
-        ),
-      );
-    },);
+        );
+      },
+    );
   }
 
-  // Enter credentials method
-  void enterCredentialsMessage() {
-    showDialog(context: context, builder: (context) {
-      return const AlertDialog(
-        backgroundColor: Colors.redAccent,
-        title: Text(
-          'Enter credentials to login and try again.', 
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 17,
-          ),
-        ),
-      );
-    },);
-  }
-
-  // Error Message
-  void errorMessage() {
-    showDialog(context: context, builder: (context) {
-      return const AlertDialog(
-        backgroundColor: Colors.redAccent,
-        title: Text(
-          'Error. Please try again later.', 
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 17,
-          ),
-        ),
-      );
-    },);
-  }
  
 
   @override
@@ -131,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
 
         backgroundColor: bgColor,
         elevation: 0,
-        title: const Text('Sign In'),
+        title: const Text('Sign Up'),
 
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(4.0),
@@ -160,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 25),
             
               // Welcome back
-              const Text('Welcome Back',
+              const Text('Create New Account',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20
@@ -185,43 +163,25 @@ class _LoginPageState extends State<LoginPage> {
                 ),
 
               const SizedBox(height: 10),
-              // forgot password?
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    ElevatedButton(
-                      onPressed: (){
-                        Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ForgotPassword()),
-                        );
-                        },
-                      style: ElevatedButton.styleFrom(
-                        splashFactory: NoSplash.splashFactory,
-                        foregroundColor:Colors.white,
-                        backgroundColor: Colors.black,
-                      ),
-                      child: const Text('Forgot Your Password?'),
-                    )
-                  ],
-                ), 
-              ),
+
+              // Confirm Password textfield
+              TextFieldUI(
+                controller: confirmPasswordController,
+                hintText: 'Password',
+                obscureText: true,
+                ),
+
+              const SizedBox(height: 10),
 
               const SizedBox(height:10),
 
-              // sign in button
-              /*MyButtonUI(
-                onTap: signUserIn,
-                ),
-              */
               Container(
                 alignment: const Alignment(0,0.85),
                 child: SizedBox(
                   height: 50,
                   width: 200,
                   child: ElevatedButton(
-                  onPressed: signUserIn ,
+                  onPressed: signUserUp ,
                   style: ButtonStyle(
                     foregroundColor: getColor(Colors.black, Colors.grey.shade800),
                     backgroundColor: getColor(Colors.white, Colors.grey.shade400),
@@ -230,7 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(50.0),
                       ))
                     ),
-                  child: const Text('SIGN IN', style:  const TextStyle(fontSize: 17),)
+                  child: const Text('SIGN UP', style:  const TextStyle(fontSize: 17),)
                   )
                   ),
                 ),
@@ -268,20 +228,22 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 30),
 
               // google + apple + microsoft sign in buttons
-              Row(
+               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   //google button
                   SquareTile(
-                    onTap: () => AuthService().signInWithGoogle() ,
-                    imagePath: 'lib/images/google.png'),
+                    onTap: () => AuthService().signInWithGoogle(),
+                    imagePath: 'lib/images/google.png',
+                    ),
 
                   SizedBox(width: 10),
                   
                   //apple button
                   SquareTile(
                     onTap: () {},
-                    imagePath: 'lib/images/apple.png'),
+                    imagePath: 'lib/images/apple.png'
+                    ),
                 ],
               ),
 
@@ -292,7 +254,7 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Don\'t have an Account?',
+                  const Text('Already have an Account?',
                     style: TextStyle(
                       color: Colors.white,
                     )
@@ -301,7 +263,7 @@ class _LoginPageState extends State<LoginPage> {
                   GestureDetector(
                     onTap: widget.onTap,
                     child: const Text(
-                      'Register Now',
+                      'Login Now',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,
