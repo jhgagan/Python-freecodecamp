@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:inventory_management/pages/login_or_register_page.dart';
 
 
-class reset_password_successful extends StatelessWidget{
-  reset_password_successful({super.key});
+class ResetPasswordSuccessful extends StatelessWidget{
+  ResetPasswordSuccessful({super.key});
   
   final Color bgColor = Colors.black;
 
@@ -61,7 +61,7 @@ class reset_password_successful extends StatelessWidget{
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => LoginPageOrRegister()),
+                          MaterialPageRoute(builder: (context) => const LoginPageOrRegister()),
                         );
                       },
                       style: ButtonStyle(
@@ -72,7 +72,7 @@ class reset_password_successful extends StatelessWidget{
                             borderRadius: BorderRadius.circular(50.0),
                           ))
                         ),
-                      child: const Text('Login Now', style:  const TextStyle(fontSize: 17),)
+                      child: const Text('Login Now', style:  TextStyle(fontSize: 17),)
                       ),
                     ),
           

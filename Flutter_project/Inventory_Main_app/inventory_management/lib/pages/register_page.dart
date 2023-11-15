@@ -56,7 +56,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
       // pop the loading circle
       Navigator.pop(context);
-      print('Error is here:'+e.code);
+      //print('Error is here:'+e.code);
       if(e.code == 'INVALID_LOGIN_CREDENTIALS') {
         errorMessage('Invalid credentials, please check and try again.');
       }
@@ -190,7 +190,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(50.0),
                       ))
                     ),
-                  child: const Text('SIGN UP', style:  const TextStyle(fontSize: 17),)
+                  child: const Text('SIGN UP', style:  TextStyle(fontSize: 17),)
                   )
                   ),
                 ),
@@ -237,7 +237,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     imagePath: 'lib/images/google.png',
                     ),
 
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   
                   //apple button
                   SquareTile(

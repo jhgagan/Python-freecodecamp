@@ -52,7 +52,9 @@ class _LoginPageState extends State<LoginPage> {
 
       // pop the loading circle
       Navigator.pop(context);
-      print('Error is here:'+e.code);
+      
+      //print('Error is here:'+e.code);
+      
       if(e.code == 'INVALID_LOGIN_CREDENTIALS') {
         invalidCredentialsMessage();
       }
@@ -230,7 +232,7 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(50.0),
                       ))
                     ),
-                  child: const Text('SIGN IN', style:  const TextStyle(fontSize: 17),)
+                  child: const Text('SIGN IN', style:  TextStyle(fontSize: 17),)
                   )
                   ),
                 ),

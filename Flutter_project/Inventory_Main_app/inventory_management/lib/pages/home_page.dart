@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      body: Center(child: Text("LOGGED IN!"),
+      body: const Center(child: Text("LOGGED IN!"),
       ),
     );
   }

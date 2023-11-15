@@ -78,7 +78,7 @@ class ForgotPassword extends StatelessWidget {
 
                 const SizedBox(height: 50),
 
-                MyButton(nextPage: emailSent(),
+                MyButton(nextPage: EmailSent(),
                 buttonText: 'Forgot Password',
                 fgColor: Colors.black,
                 fgColorPressed: Colors.grey.shade800, 

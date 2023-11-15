@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:inventory_management/components/ui_mybutton.dart';
 import 'package:inventory_management/pages/reset_password.dart';
 
-class emailSent extends StatelessWidget{
-  emailSent({super.key});
+class EmailSent extends StatelessWidget{
+  EmailSent({super.key});
 
   final bgColor = Colors.black;
   

@@ -74,7 +74,7 @@ class ResetPassword extends StatelessWidget {
 
                   const SizedBox(height: 50),
 
-                  MyButton(nextPage: reset_password_successful(),
+                  MyButton(nextPage: ResetPasswordSuccessful(),
                     buttonText: 'Reset Password', 
                     fgColor: Colors.black,
                     fgColorPressed: Colors.grey.shade800,
