@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -31,6 +31,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    
+  final user = FirebaseAuth.instance.currentUser!;
+  
     return Scaffold(
       // To make the AppBar transparent
       extendBodyBehindAppBar: true,
@@ -60,7 +63,13 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      body: const Center(child: Text("LOGGED IN!"),
+      body: Center(
+        child: Text("LOGGED IN AS: ${user.email!}",
+          style: const TextStyle(
+            color:Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }

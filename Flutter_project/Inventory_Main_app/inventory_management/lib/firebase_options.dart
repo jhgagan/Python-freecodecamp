@@ -66,6 +66,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '954702165994',
     projectId: 'inventory-management-58522',
     storageBucket: 'inventory-management-58522.appspot.com',
+    iosClientId: '954702165994-h507tbta7rk2vln1k2tj7u7fnhagec7m.apps.googleusercontent.com',
     iosBundleId: 'com.example.inventoryManagement',
   );
 
@@ -75,6 +76,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '954702165994',
     projectId: 'inventory-management-58522',
     storageBucket: 'inventory-management-58522.appspot.com',
+    iosClientId: '954702165994-g25v9q5h2vnve5i7m02ucn5r7n0pfq48.apps.googleusercontent.com',
     iosBundleId: 'com.example.inventoryManagement.RunnerTests',
   );
 }
