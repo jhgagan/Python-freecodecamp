@@ -11,7 +11,7 @@ class LoginPageTab extends StatefulWidget {
   final Function()? onTap;
 
 
-  LoginPageTab({super.key, required this.onTap});
+  const LoginPageTab({super.key, required this.onTap});
 
   @override
   State<LoginPageTab> createState() => _LoginPageTabState();

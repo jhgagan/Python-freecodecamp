@@ -44,6 +44,9 @@ dependencies:
   google_nav_bar: ^5.0.6
   cloud_firestore: ^4.13.5
   mobile_scanner: ^3.5.5
+  http: ^0.13.6
+  fluttertoast: ^8.2.4
+  hidden_drawer_menu: ^3.0.1
   
 dev_dependencies:
   flutter_test:
@@ -54,7 +57,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

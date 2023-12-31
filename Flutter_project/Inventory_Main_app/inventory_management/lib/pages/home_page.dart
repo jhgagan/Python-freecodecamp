@@ -6,7 +6,7 @@ import 'package:inventory_management/pages/home_page_desktop.dart';
 
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -36,14 +36,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     
-  final user = FirebaseAuth.instance.currentUser!;
+  //final user = FirebaseAuth.instance.currentUser!;
   
     if (MediaQuery.of(context).size.width<600.0)
     {
-      return HomePage_Mobile();
+      // add hidden drawer here
+      return const HomePageMobile();
+      //return HiddenDrawer();
     }
     else{
-      return HomePage_desktop();
+      // add hidden drawer here as well
+      return const HomePageDesktop();
     }
     
   }

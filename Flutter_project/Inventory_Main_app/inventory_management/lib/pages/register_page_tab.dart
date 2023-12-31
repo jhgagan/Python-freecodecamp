@@ -10,7 +10,7 @@ class RegisterPageTab extends StatefulWidget {
   final Function()? onTap;
 
 
-  RegisterPageTab({super.key, required this.onTap});
+  const RegisterPageTab({super.key, required this.onTap});
 
   @override
   State<RegisterPageTab> createState() => _RegisterPageTabState();

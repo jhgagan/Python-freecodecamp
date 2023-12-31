@@ -8,7 +8,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // ignore: camel_case_types
 class onBoardingScreen extends StatefulWidget {
-  const onBoardingScreen({Key? key}) : super(key: key);
+  const onBoardingScreen({super.key});
 
   @override
   // ignore: library_private_types_in_public_api

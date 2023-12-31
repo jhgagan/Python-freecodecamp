@@ -1,20 +1,21 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:inventory_management/pages/sustainability_page.dart';
 import 'package:inventory_management/pages/tabs/add_tab.dart';
 import 'package:inventory_management/pages/tabs/scanner_tab.dart';
 import 'package:inventory_management/pages/tabs/home_tab.dart';
 
 
-class HomePage_Mobile extends StatefulWidget {
-  HomePage_Mobile({super.key});
+class HomePageMobile extends StatefulWidget {
+  const HomePageMobile({super.key});
 
   @override
-  State<HomePage_Mobile> createState() => _HomePage_MobileState();
+  State<HomePageMobile> createState() => _HomePageMobileState();
 }
 
 // ignore: camel_case_types
-class _HomePage_MobileState extends State<HomePage_Mobile> {
+class _HomePageMobileState extends State<HomePageMobile> {
   final Color bgColor = Colors.black; 
   
     int _selectedIndex = 0;
@@ -22,7 +23,7 @@ class _HomePage_MobileState extends State<HomePage_Mobile> {
   void _navigateBottomBar(int index){
     setState(() {
       _selectedIndex = index;
-      print("Selected index: ${_selectedIndex}");  
+      //print("Selected index: $_selectedIndex");  
     });
     }
   //sign user out method
@@ -47,17 +48,20 @@ class _HomePage_MobileState extends State<HomePage_Mobile> {
   Widget build(BuildContext context) {
 
   final List<Text> title = [
-    Text('Inventory Management'),
-    Text('Add Stock'),
-    Text('Point of Sale')
+    const Text('Inventory Management'),
+    const Text('Add Stock'),
+    const Text('Point of Sale'),
+    const Text('Sustainability')
   ];
 
   final List<Widget> pages = [
-    UserHome(),
+    const UserHome(),
     
-    AddItem(),
+    const AddItem(),
 
-    QRScanner(),
+    const QRScanner(),
+
+    const Sustainability(),
 
   ];
     
@@ -88,6 +92,7 @@ class _HomePage_MobileState extends State<HomePage_Mobile> {
         ),
       ),
 
+
       body: pages[_selectedIndex],
 
       bottomNavigationBar: GNav(
@@ -107,6 +112,10 @@ class _HomePage_MobileState extends State<HomePage_Mobile> {
           
           GButton(icon: Icons.store,
           text: 'Store',
+          ),
+
+          GButton(icon: Icons.energy_savings_leaf,
+          text: 'Sustainability',
           ),
         ]),
     );

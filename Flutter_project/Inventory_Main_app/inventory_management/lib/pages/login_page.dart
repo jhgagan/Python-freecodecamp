@@ -11,7 +11,7 @@ class LoginPage extends StatefulWidget {
   final Function()? onTap;
 
 
-  LoginPage({super.key, required this.onTap});
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -143,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
       body:SingleChildScrollView(
         child: SafeArea(
           child: Center(
-            child: Container(
+            child: SizedBox(
               height: MediaQuery.of(context).size.height,
               child: Column(
                 children: [

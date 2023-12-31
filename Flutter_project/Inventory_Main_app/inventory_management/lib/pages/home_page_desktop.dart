@@ -1,14 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class HomePage_desktop extends StatefulWidget {
-  HomePage_desktop({super.key});
+class HomePageDesktop extends StatefulWidget {
+  const HomePageDesktop({super.key});
 
   @override
-  State<HomePage_desktop> createState() => _HomePage_desktopState();
+  State<HomePageDesktop> createState() => _HomePageDesktopState();
 }
 
-class _HomePage_desktopState extends State<HomePage_desktop> {
+class _HomePageDesktopState extends State<HomePageDesktop> {
   final Color bgColor = Colors.black; 
 
   //sign user out method

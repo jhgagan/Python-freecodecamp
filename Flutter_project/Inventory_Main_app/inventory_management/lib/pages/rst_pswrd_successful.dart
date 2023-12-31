@@ -3,7 +3,7 @@ import 'package:inventory_management/pages/login_or_register_page.dart';
 
 
 class ResetPasswordSuccessful extends StatelessWidget{
-  ResetPasswordSuccessful({super.key});
+  const ResetPasswordSuccessful({super.key});
   
   final Color bgColor = Colors.black;
 

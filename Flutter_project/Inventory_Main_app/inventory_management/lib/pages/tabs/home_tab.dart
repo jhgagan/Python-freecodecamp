@@ -1,13 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_management/services/firestore.dart';
-import 'package:lottie/lottie.dart';
 
 class UserHome extends StatefulWidget {
 
 
-  UserHome({super.key});
+  const UserHome({super.key});
 
   @override
   State<UserHome> createState() => _UserHomeState();
@@ -21,24 +19,19 @@ class _UserHomeState extends State<UserHome> {
   //text controller
   final TextEditingController textController = TextEditingController();
 
-  void updateScannerBox(String docID) {
+  void showScannerBox(String docID) {
       showDialog(
         context: context, 
         builder: (context) => AlertDialog(
-          content: TextField(
-            controller: textController,
-          ),
+
           actions: [ElevatedButton(onPressed: (){
             //update an existing note
-            firestoreService.updatePackage(docID,textController.text);
-            
-            //clear the text controller
-            textController.clear();
+            firestoreService.getPackageData(docID);
 
             //close the box
             Navigator.pop(context);
           },
-        child: const Text("Update"), )]
+        child: const Text("OK"), )]
 
         ),
       );
@@ -47,7 +40,7 @@ class _UserHomeState extends State<UserHome> {
   @override
   Widget build(BuildContext context) {
 
-    final user = FirebaseAuth.instance.currentUser!;
+    //final user = FirebaseAuth.instance.currentUser!;
 
     return Center(
         child: StreamBuilder<QuerySnapshot>(
@@ -66,33 +59,36 @@ class _UserHomeState extends State<UserHome> {
                   //get note from each doc
                   Map<String, dynamic> data = 
                     document.data() as Map<String,dynamic>;
-                  String packageText = data['package'];
+                  String packageText = data['name'];
         
                   // display as a list tile
-                  return Container(
-                    child: ListTile(
-                      title: Text(packageText,
-                      style: const TextStyle(color: Colors.white),
-                      ),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          // update button
-                          IconButton(
-                            onPressed: () => updateScannerBox(docID),
-                            icon: const Icon(Icons.settings,
-                            color: Colors.grey,),
-                          ),
-                  
-                          // delete button
-                          IconButton(
-                            onPressed: () => firestoreService.deletePackage(docID),
-                            icon: const Icon(Icons.delete,
-                            color: Colors.grey,),
-                          ),
-                        ],
-                      ),
+                  return ListTile(
+                    title: Text(packageText,
+                    style: const TextStyle(color: Colors.white),
                     ),
+                    trailing: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // update button
+                        /*IconButton(
+                          onPressed: () => updateScannerBox(docID),
+                          icon: const Icon(Icons.settings,
+                          color: Colors.grey,),
+                        ),
+                        */
+                        // delete button
+                        IconButton(
+                          onPressed: () {
+                            firestoreService.deletePackage(docID,"Package delete Successfully.");
+                            },
+                          icon: const Icon(Icons.delete,
+                          color: Colors.grey,),
+                        ),
+                      ],
+                    ),
+                    onTap: (){
+
+                    },
                   );
                 },
               );
