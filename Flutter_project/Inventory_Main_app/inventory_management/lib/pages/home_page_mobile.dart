@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:inventory_management/pages/sustainability_page.dart';
+import 'package:inventory_management/pages/tabs/sustainability_page.dart';
 import 'package:inventory_management/pages/tabs/add_tab.dart';
 import 'package:inventory_management/pages/tabs/scanner_tab.dart';
 import 'package:inventory_management/pages/tabs/home_tab.dart';
@@ -48,10 +48,14 @@ class _HomePageMobileState extends State<HomePageMobile> {
   Widget build(BuildContext context) {
 
   final List<Text> title = [
-    const Text('Inventory Management'),
-    const Text('Add Stock'),
-    const Text('Point of Sale'),
-    const Text('Sustainability')
+    const Text('Inventory Management',
+    style: TextStyle(color: Colors.white),),
+    const Text('Add Stock',
+    style: TextStyle(color: Colors.white),),
+    const Text('Point of Sale',
+    style: TextStyle(color: Colors.white),),
+    const Text('Sustainability',
+    style: TextStyle(color: Colors.white),),
   ];
 
   final List<Widget> pages = [
@@ -62,7 +66,6 @@ class _HomePageMobileState extends State<HomePageMobile> {
     const QRScanner(),
 
     const Sustainability(),
-
   ];
     
   
@@ -74,7 +77,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
       // AppBar 
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: signUserOut, icon: const Icon(Icons.logout_rounded))
+          IconButton(onPressed: signUserOut, icon: const Icon(Icons.logout_rounded), color: Colors.grey.shade400,)
         ],
         leading: null, 
 

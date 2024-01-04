@@ -51,7 +51,7 @@ class FirestoreService{
             'Category':categoryName,
             'Barcode':package,
             'Issuing Country': issuingCountry,
-            'TimeStamp':Timestamp.now()
+            'TimeStamp':Timestamp.now(),
           });
 
           // Flutter Toast to notify added successfully
@@ -73,13 +73,6 @@ class FirestoreService{
           );
         }
         
-        /*print('''
-          Name: ${name}\n
-          Category: ${categoryName}\n
-          Barcode: ${barcode}\n
-          Issuing Country: ${issuingCountry}
-        ''');
-        */
       }
       else
       {
@@ -114,6 +107,21 @@ class FirestoreService{
   getPackageData(String package) {
     // initialize the list here
     return inventory.doc(package).get();
+  }
+
+  // To manually add the package to the inventory
+
+  Future<void> manuallyAddPackage(String name,
+  String categoryName,
+  String package,
+  String issuingCountry) {
+    return inventory.doc(package).set({
+      'name':name,
+      'Category':categoryName,
+      'Barcode':package,
+      'Issuing Country': issuingCountry,
+      'TimeStamp':Timestamp.now()}
+    );
   }
 
   //Update: update info given a doc id

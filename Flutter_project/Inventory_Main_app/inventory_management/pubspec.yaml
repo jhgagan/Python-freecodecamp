@@ -47,6 +47,8 @@ dependencies:
   http: ^0.13.6
   fluttertoast: ^8.2.4
   hidden_drawer_menu: ^3.0.1
+  geolocator: ^10.1.0
+  fl_chart: ^0.60.0
   
 dev_dependencies:
   flutter_test:
@@ -80,6 +82,7 @@ flutter:
     - lib\animations\invalid.json
     - lib\animations\add_package.json
     - lib\animations\checkout.json
+    - lib\animations\solar.json
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

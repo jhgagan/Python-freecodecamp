@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
 
     // try sign in
     try{
-       await FirebaseAuth.instance.signInWithEmailAndPassword(
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: emailController.text,
       password: passwordController.text,
       );
@@ -127,7 +127,8 @@ class _LoginPageState extends State<LoginPage> {
 
         backgroundColor: bgColor,
         elevation: 0,
-        title: const Text('Sign In'),
+        title: const Text('Sign In',
+        style: TextStyle(color: Colors.white),),
 
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(4.0),

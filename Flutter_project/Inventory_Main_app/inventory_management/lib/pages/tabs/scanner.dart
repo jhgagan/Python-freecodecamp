@@ -52,7 +52,7 @@ class _ScannerState extends State<Scanner> {
             const Expanded(child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Place the QR code in the area",
+                Text("Place the Barcode code in the area",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,

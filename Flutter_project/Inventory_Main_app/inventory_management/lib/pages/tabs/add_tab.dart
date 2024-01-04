@@ -18,7 +18,10 @@ class _AddItemState extends State<AddItem> {
 
 
   //text controller
-  final TextEditingController textController = TextEditingController();
+  final TextEditingController textName = TextEditingController();
+  final TextEditingController textCatName = TextEditingController();
+  final TextEditingController textIssCntry = TextEditingController();
+  final TextEditingController textPackage = TextEditingController();
 
   // open a dialog box to add the package/stock
   void openScannerBox() {
@@ -30,16 +33,64 @@ class _AddItemState extends State<AddItem> {
             data: ThemeData(canvasColor: Colors.red),
             child:AlertDialog(
               backgroundColor: Colors.grey[900],
-            content: TextField(
-            controller: textController,
-            style: const TextStyle(color: Colors.white),
-          ),
+            content: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget> [
+                // Name of the Package
+                TextField(
+                controller: textName,
+                style: const TextStyle(color: Colors.white),
+                decoration: const InputDecoration(
+                  labelText:'Name',
+                  labelStyle: TextStyle(color: Colors.white),
+                ),
+                ),
+                // Name of the Category
+                TextField(
+                controller: textCatName,
+                style: const TextStyle(color: Colors.white),
+                decoration: const InputDecoration(
+                  labelText:'Category',
+                  labelStyle: TextStyle(color: Colors.white),
+                ),
+                ),
+                // Barcode
+                TextField(
+                controller: textIssCntry,
+                style: const TextStyle(color: Colors.white),
+                decoration: const InputDecoration(
+                  labelText:'Issuing Country',
+                  labelStyle: TextStyle(color: Colors.white),
+                ),
+                ),
+
+                TextField(
+                controller: textPackage,
+                style: const TextStyle(color: Colors.white),
+                decoration: const InputDecoration(
+                  labelText:'Barcode',
+                  labelStyle: TextStyle(color: Colors.white),
+                ),
+                ),
+
+              ],
+            ),
           actions: [ElevatedButton(onPressed: (){
-            if (textController.text.isNotEmpty)
+            // Check if the fields are empty
+            if(textName.text.isNotEmpty && textCatName.text.isNotEmpty && textIssCntry.text.isNotEmpty && textPackage.text.isNotEmpty)
             {
-              firestoreService.addPackage(textController.text);
+              firestoreService.manuallyAddPackage(
+                textName.text,
+                textCatName.text,
+                textPackage.text,
+                textIssCntry.text
+              );
               //clear the text controller
-              textController.clear();
+              textName.clear();
+              textCatName.clear();
+              textPackage.clear();
+              textIssCntry.clear();
 
               //close the box
               Navigator.pop(context);
