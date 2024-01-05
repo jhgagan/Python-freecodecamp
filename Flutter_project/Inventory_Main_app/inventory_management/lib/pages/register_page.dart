@@ -99,12 +99,14 @@ class _RegisterPageState extends State<RegisterPage> {
       // To make the AppBar transparent
       extendBodyBehindAppBar: true,
       backgroundColor: bgColor,
+      
 
       // AppBar 
       appBar: AppBar(
         leading: null, 
 
         backgroundColor: bgColor,
+        foregroundColor: Colors.white,
         elevation: 0,
         title: const Text('Sign Up'),
 

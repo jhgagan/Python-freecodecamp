@@ -103,6 +103,13 @@ class _AddItemState extends State<AddItem> {
         ),
         
         ElevatedButton(onPressed: (){
+          // Clear the text fields
+          textName.clear();
+          textCatName.clear();
+          textPackage.clear();
+          textIssCntry.clear();
+
+          // Pop the dialog box
           Navigator.pop(context);
         },
         style: ButtonStyle(

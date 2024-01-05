@@ -29,7 +29,7 @@ class _ScannerState extends State<Scanner> {
       // AppBar 
       appBar: AppBar(
         leading: null, 
-
+        foregroundColor: Colors.white,
         backgroundColor: Colors.black,
         elevation: 0,
         title: const Text('Scanner'),
